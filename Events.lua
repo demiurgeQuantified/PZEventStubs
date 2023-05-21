@@ -7,217 +7,217 @@
 Events = {}
 
 ---(Multiplayer) (Client) Fires when a player accepts an invite to a faction.
-Events.AcceptedFactionInvite.AcceptedFactionInvite = {
+Events.AcceptedFactionInvite = {
     ---@param func fun(factionName:String,username:String):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Multiplayer) (Client) Fires when a player accepts an invite to a safehouse.
-Events.AcceptedSafehouseInvite.AcceptedSafehouseInvite = {
+Events.AcceptedSafehouseInvite = {
     ---@param func fun(safehouseTitle:String,username:String):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Multiplayer) (Client) Fires when the other player in the client's current trade accepts or declines the trade.
-Events.AcceptedTrade.AcceptedTrade = {
+Events.AcceptedTrade = {
     ---@param func fun(accepted:boolean):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires when a local character gains xp, unless it is flagged not to.
-Events.AddXP.AddXP = {
+Events.AddXP = {
     ---@param func fun(character:IsoGameCharacter,perk:PerkFactory.Perk,amount:float):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires when updating the tooltip of an IsoObject with a special tooltip.
-Events.DoSpecialTooltip.DoSpecialTooltip = {
+Events.DoSpecialTooltip = {
     ---@param func fun(tooltip:ObjectTooltip,square:IsoGridSquare):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires at 0:00 every in-game day.
-Events.EveryDays.EveryDays = {
+Events.EveryDays = {
     ---@param func function
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires at the start of every in-game hour.
-Events.EveryHours.EveryHours = {
+Events.EveryHours = {
     ---@param func function
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires every in-game minute.
-Events.EveryOneMinute.EveryOneMinute = {
+Events.EveryOneMinute = {
     ---@param func function
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires every ten in-game minutes.
-Events.EveryTenMinutes.EveryTenMinutes = {
+Events.EveryTenMinutes = {
     ---@param func function
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires after a local character gains or loses a perk level.
-Events.LevelPerk.LevelPerk = {
+Events.LevelPerk = {
     ---@param func fun(character:IsoGameCharacter,perk:PerkFactory.Perk,level:int,increased:boolean):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires after a new square is loaded.
-Events.LoadGridsquare.LoadGridsquare = {
+Events.LoadGridsquare = {
     ---@param func fun(square:IsoGridSquare):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Multiplayer) (Client) Fires when managing a remote player's inventory from the admin menu.
-Events.MngInvReceiveItems.MngInvReceiveItems = {
+Events.MngInvReceiveItems = {
     ---@param func fun(itemtable:table):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires when a local character (zombie, player) changes state.
-Events.OnAIStateChange.OnAIStateChange = {
+Events.OnAIStateChange = {
     ---@param func fun(character:IsoGameCharacter,currentState:State,previousState:State):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires when the client accepts a steam invite to a server. See Steamworks API
-Events.OnAcceptInvite.OnAcceptInvite = {
+Events.OnAcceptInvite = {
     ---@param func fun(connectString:String):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires after the foraging item definitions are created.
-Events.onAddForageDefs.onAddForageDefs = {
+Events.onAddForageDefs = {
     ---@param func fun(forageSystem:table):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Multiplayer) (Client) Fires when a message is added to chat.
-Events.OnAddMessage.OnAddMessage = {
+Events.OnAddMessage = {
     ---@param func fun(message:ChatMessage,tabId:short):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Multiplayer) (Client) Fires when a ticket is created and the local player is an admin. The co-ordinates are the location of the player creating the ticket.
-Events.OnAdminMessage.OnAdminMessage = {
+Events.OnAdminMessage = {
     ---@param func fun(message:String,x:int,y:int,z:int):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires whenever a sound meta event or building alarm is triggered.
-Events.OnAmbientSound.OnAmbientSound = {
+Events.OnAmbientSound = {
     ---@param func fun(x:float,y:float,z:float):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires when the client GlobalObject system is being initialised.
-Events.OnCGlobalObjectSystemInit.OnCGlobalObjectSystemInit = {
+Events.OnCGlobalObjectSystemInit = {
     ---@param func function
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires when the main menu wants to check for challenge maps.
-Events.OnChallengeQuery.OnChallengeQuery = {
+Events.OnChallengeQuery = {
     ---@param func function
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires when a non-zombie character collides with another (possibly zombie) character.
-Events.OnCharacterCollide.OnCharacterCollide = {
+Events.OnCharacterCollide = {
     ---@param func fun(character:IsoGameCharacter,collidedCharacter:IsoGameCharacter):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires when a character dies.
-Events.OnCharacterDeath.OnCharacterDeath = {
+Events.OnCharacterDeath = {
     ---@param func fun(character:IsoGameCharacter):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Multiplayer) (Client) Fires when the chat window is initialised.
-Events.OnChatWindowInit.OnChatWindowInit = {
+Events.OnChatWindowInit = {
     ---@param func function
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Server) Fires when a client command sent through sendClientCommand is received by the server.
-Events.OnClientCommand.OnClientCommand = {
+Events.OnClientCommand = {
     ---@param func fun(module:String,command:String,player:IsoPlayer,args:table):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires when the climate manager is initialised.
-Events.OnClimateManagerInit.OnClimateManagerInit = {
+Events.OnClimateManagerInit = {
     ---@param func fun(climateManager:ClimateManager):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires every climate manager tick.
-Events.OnClimateTick.OnClimateTick = {
+Events.OnClimateTick = {
     ---@param func fun(climateManager:ClimateManager):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires every climate manager tick, but only on the client and only when debug mode is enabled.
-Events.OnClimateTickDebug.OnClimateTickDebug = {
+Events.OnClimateTickDebug = {
     ---@param func fun(climateManager:ClimateManager):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires every time a character's clothing is updated. This includes when accumulating dirt or blood.
-Events.OnClothingUpdated.OnClothingUpdated = {
+Events.OnClothingUpdated = {
     ---@param func fun(character:IsoGameCharacter):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Multiplayer) (Client) Fires when the client fails to connect to a server.
-Events.OnConnectFailed.OnConnectFailed = {
+Events.OnConnectFailed = {
     ---@param func fun(message:String):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Multiplayer) (Client) Fires while connecting to a server.
-Events.OnConnected.OnConnected = {
+Events.OnConnected = {
     ---@param func function
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Multiplayer) (Client) Fires when the client's connection state is updated while trying to connect to a server.
-Events.OnConnectionStateChanged.OnConnectionStateChanged = {
+Events.OnConnectionStateChanged = {
     ---@param func fun(state:String,message:String):any
     ---@overload fun(func:fun(state:String,message:String,place:int):any)
     Add = function(func) end,
@@ -225,826 +225,826 @@ Events.OnConnectionStateChanged.OnConnectionStateChanged = {
     Remove = function(func) end,
 }
 ---(Client) Fires when a container is added or removed from the world.
-Events.OnContainerUpdate.OnContainerUpdate = {
+Events.OnContainerUpdate = {
     ---@param func fun(object:any):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires when a splitscreen character fails to be added.
-Events.OnCoopJoinFailed.OnCoopJoinFailed = {
+Events.OnCoopJoinFailed = {
     ---@param func fun(playerIndex:int):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Multiplayer) (Server) Fires when receiving a server message during a co-op (in-game hosted) game.
-Events.OnCoopServerMessage.OnCoopServerMessage = {
+Events.OnCoopServerMessage = {
     ---@param func fun(tag:String,cookie:String,payload:String):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires when an IsoPlayer or IsoSurvivor object is created.
-Events.OnCreateLivingCharacter.OnCreateLivingCharacter = {
+Events.OnCreateLivingCharacter = {
     ---@param func fun(character:IsoLivingCharacter,desc:SurvivorDesc):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires every time a local player loads into the world.
-Events.OnCreatePlayer.OnCreatePlayer = {
+Events.OnCreatePlayer = {
     ---@param func fun(playerIndex:int,player:IsoPlayer):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires when an IsoSurvivor object is created.
-Events.OnCreateSurvivor.OnCreateSurvivor = {
+Events.OnCreateSurvivor = {
     ---@param func fun(survivor:IsoSurvivor):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires when the UI is initialised.
-Events.OnCreateUI.OnCreateUI = {
+Events.OnCreateUI = {
     ---@param func function
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires when a key that is not used by vanilla UI is released.
-Events.OnCustomUIKey.OnCustomUIKey = {
+Events.OnCustomUIKey = {
     ---@param func fun(key:int):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires when a key that is not used by vanilla UI is released.
-Events.OnCustomUIKeyReleased.OnCustomUIKeyReleased = {
+Events.OnCustomUIKeyReleased = {
     ---@param func fun(key:int):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires when a key that is not used by vanilla UI is pressed.
-Events.OnCustomUIKeyPressed.OnCustomUIKeyPressed = {
+Events.OnCustomUIKeyPressed = {
     ---@param func fun(key:int):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires when an IsoThumpable object is destroyed by damage.
-Events.OnDestroyIsoThumpable.OnDestroyIsoThumpable = {
+Events.OnDestroyIsoThumpable = {
     ---@param func fun(object:IsoThumpable):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires whenever a radio displays text.
-Events.OnDeviceText.OnDeviceText = {
+Events.OnDeviceText = {
     ---@param func fun(guid:String,codes:String,x:float,y:float,z:float,text:String,device:WaveSignalDevice):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Multiplayer) (Client) Fires when the client disconnects from a server.
-Events.OnDisconnect.OnDisconnect = {
+Events.OnDisconnect = {
     ---@param func function
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires when a local player disables search mode.
-Events.onDisableSearchMode.onDisableSearchMode = {
+Events.onDisableSearchMode = {
     ---@param func fun(character:IsoPlayer,isSearchMode:boolean):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires when the distribution tables merge.
-Events.OnDistributionMerge.OnDistributionMerge = {
+Events.OnDistributionMerge = {
     ---@param func function
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires when the local mouse and keyboard player builds something.
-Events.OnDoTileBuilding2.OnDoTileBuilding2 = {
+Events.OnDoTileBuilding2 = {
     ---@param func fun(cursor:table,bRender:boolean,x:int,y:int,z:int,square:IsoGridSquare):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires when a controller player builds something.
-Events.OnDoTileBuilding3.OnDoTileBuilding3 = {
+Events.OnDoTileBuilding3 = {
     ---@param func fun(cursor:table,bRender:boolean,x:int,y:int,z:int,square:IsoGridSquare):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires when a local character crafts a dynamically generated Moveable scrapping recipe.
-Events.OnDynamicMovableRecipe.OnDynamicMovableRecipe = {
+Events.OnDynamicMovableRecipe = {
     ---@param func fun(sprite:String,recipe:MoveableRecipe,item:Moveable,character:IsoGameCharacter):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires when a local player enables search mode.
-Events.onEnableSearchMode.onEnableSearchMode = {
+Events.onEnableSearchMode = {
     ---@param func fun(character:IsoPlayer,isSearchMode:boolean):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires when a character enters a vehicle.
-Events.OnEnterVehicle.OnEnterVehicle = {
+Events.OnEnterVehicle = {
     ---@param func fun(character:IsoGameCharacter):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires when a character equips a new item in their primary slot.
-Events.OnEquipPrimary.OnEquipPrimary = {
+Events.OnEquipPrimary = {
     ---@param func fun(character:IsoGameCharacter,item:InventoryItem):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires when a character equips a new item in their secondary slot.
-Events.OnEquipSecondary.OnEquipSecondary = {
+Events.OnEquipSecondary = {
     ---@param func fun(character:IsoGameCharacter,item:InventoryItem):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires when a character exits a vehicle.
-Events.OnExitVehicle.OnExitVehicle = {
+Events.OnExitVehicle = {
     ---@param func fun(character:IsoGameCharacter):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires every tick while on the main menu.
-Events.OnFETick.OnFETick = {
+Events.OnFETick = {
     ---@param func function
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Server) Fires whenever a container is first filled with loot, or when loot respawns. Never fires for corpses. For vehicle containers, the roomType is instead the vehicle type.
-Events.OnFillContainer.OnFillContainer = {
+Events.OnFillContainer = {
     ---@param func fun(roomType:String,containerType:String,container:ItemContainer):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires after the context menu for an inventory item is created.
-Events.OnFillInventoryObjectContextMenu.OnFillInventoryObjectContextMenu = {
+Events.OnFillInventoryObjectContextMenu = {
     ---@param func fun(playerIndex:int,context:table,items:table):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires after the context menu for an empty inventory is created.
-Events.OnFillInventoryContextMenuNoItems.OnFillInventoryContextMenuNoItems = {
+Events.OnFillInventoryContextMenuNoItems = {
     ---@param func fun(playerIndex:int,context:table,isLoot:boolean):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires when opening the context menu for a foraging item.
-Events.onFillSearchIconContextMenu.onFillSearchIconContextMenu = {
+Events.onFillSearchIconContextMenu = {
     ---@param func fun(context:table,icon:table):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires after the context menu for a world object is created.
-Events.OnFillWorldObjectContextMenu.OnFillWorldObjectContextMenu = {
+Events.OnFillWorldObjectContextMenu = {
     ---@param func fun(playerIndex:int,context:table,worldobjects:table,test:boolean):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires after the game finishes starting up. Note: For clients, lua files in lua/server/ will not have loaded by the time this event is fired. This does not apply to servers.
-Events.OnGameBoot.OnGameBoot = {
+Events.OnGameBoot = {
     ---@param func function
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires upon finishing loading and entering the game.
-Events.OnGameStart.OnGameStart = {
+Events.OnGameStart = {
     ---@param func function
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires upon entering the Terms Of Service game state.
-Events.OnGameStateEnter.OnGameStateEnter = {
+Events.OnGameStateEnter = {
     ---@param func fun(state:State):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires after GameTime is initialised.
-Events.OnGameTimeLoaded.OnGameTimeLoaded = {
+Events.OnGameTimeLoaded = {
     ---@param func function
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires after a controller is connected.
-Events.OnGamepadConnect.OnGamepadConnect = {
+Events.OnGamepadConnect = {
     ---@param func fun(controllerId:int):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires after a controller is disconnected.
-Events.OnGamepadDisconnect.OnGamepadDisconnect = {
+Events.OnGamepadDisconnect = {
     ---@param func fun(controllerId:int):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Multiplayer) (Client) Fires when receiving the database schema from the server.
-Events.OnGetDBSchema.OnGetDBSchema = {
+Events.OnGetDBSchema = {
     ---@param func fun(schema:table):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Multiplayer) (Client) Fires when receiving a database table query result from the server.
-Events.OnGetTableResult.OnGetTableResult = {
+Events.OnGetTableResult = {
     ---@param func fun(data:ArrayList,rowId:int,tableName:String):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires when a square is burned by fire.
-Events.OnGridBurnt.OnGridBurnt = {
+Events.OnGridBurnt = {
     ---@param func fun(square:IsoGridSquare):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires whenever a zombie is hit by a character.
-Events.OnHitZombie.OnHitZombie = {
+Events.OnHitZombie = {
     ---@param func fun(zombie:IsoZombie,attacker:IsoGameCharacter,bodyPart:BodyPartType,weapon:HandWeapon):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires when GlobalModData is initialised. This is the earliest event after Sandbox Options are loaded.
-Events.OnInitGlobalModData.OnInitGlobalModData = {
+Events.OnInitGlobalModData = {
     ---@param func fun(newGame:boolean):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires when a modded weather period is created.
-Events.OnInitModdedWeatherStage.OnInitModdedWeatherStage = {
+Events.OnInitModdedWeatherStage = {
     ---@param func fun(weatherPeriod:WeatherPeriod,weatherStage:WeatherStage,strength:float):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires when RecordedMedia is initialised.
-Events.OnInitRecordedMedia.OnInitRecordedMedia = {
+Events.OnInitRecordedMedia = {
     ---@param func fun(recordedMedia:RecordedMedia):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires when the ErosionManager is created.
-Events.OnInitSeasons.OnInitSeasons = {
+Events.OnInitSeasons = {
     ---@param func fun(season:ErosionSeason):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires after the world has initialised.
-Events.OnInitWorld.OnInitWorld = {
+Events.OnInitWorld = {
     ---@param func function
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires when a local character is forced to drop the items in their hands.
-Events.onItemFall.onItemFall = {
+Events.onItemFall = {
     ---@param func function
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires whenever a controller starts being used during gameplay.
-Events.OnJoypadActivate.OnJoypadActivate = {
+Events.OnJoypadActivate = {
     ---@param func fun(joypadId:int):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires whenever a controller starts being used outside of gameplay, such as on the main menu.
-Events.OnJoypadActivateUI.OnJoypadActivateUI = {
+Events.OnJoypadActivateUI = {
     ---@param func fun(joypadId:int):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires when a controller is disconnected, before disconnection is processed.
-Events.OnJoypadBeforeDeactivate.OnJoypadBeforeDeactivate = {
+Events.OnJoypadBeforeDeactivate = {
     ---@param func fun(joypadId:double):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires when a controller is connected, before connection is processed.
-Events.OnJoypadBeforeReactivate.OnJoypadBeforeReactivate = {
+Events.OnJoypadBeforeReactivate = {
     ---@param func fun(joypadId:double):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires after a controller has been disconnected.
-Events.OnJoypadDeactivate.OnJoypadDeactivate = {
+Events.OnJoypadDeactivate = {
     ---@param func fun(joypadId:double):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires after a controller has been connected.
-Events.OnJoypadReactivate.OnJoypadReactivate = {
+Events.OnJoypadReactivate = {
     ---@param func fun(joypadId:double):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires when rendering controller debug UI.
-Events.OnJoypadRenderUI.OnJoypadRenderUI = {
+Events.OnJoypadRenderUI = {
     ---@param func function
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires every frame while a key is held down.
-Events.OnKeyKeepPressed.OnKeyKeepPressed = {
+Events.OnKeyKeepPressed = {
     ---@param func fun(key:int):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires when a key is released.
-Events.OnKeyPressed.OnKeyPressed = {
+Events.OnKeyPressed = {
     ---@param func fun(key:int):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires when a key starts being pressed.
-Events.OnKeyStartPressed.OnKeyStartPressed = {
+Events.OnKeyStartPressed = {
     ---@param func fun(key:int):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires upon finishing loading and entering the game.
-Events.OnLoad.OnLoad = {
+Events.OnLoad = {
     ---@param func function
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires after loading the map zones.
-Events.OnLoadedMapZones.OnLoadedMapZones = {
+Events.OnLoadedMapZones = {
     ---@param func function
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires after loading the tile definitions.
-Events.OnLoadedTileDefinitions.OnLoadedTileDefinitions = {
+Events.OnLoadedTileDefinitions = {
     ---@param func fun(spriteManager:IsoSpriteManager):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires before loading the map zones.
-Events.OnLoadMapZones.OnLoadMapZones = {
+Events.OnLoadMapZones = {
     ---@param func function
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Multiplayer) Fires when the server sends a square's moddata to the clients, or when the client receives it.
-Events.onLoadModDataFromServer.onLoadModDataFromServer = {
+Events.onLoadModDataFromServer = {
     ---@param func fun(square:IsoGridSquare):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires after ZomboidRadio loads the radio scripts.
-Events.OnLoadRadioScripts.OnLoadRadioScripts = {
+Events.OnLoadRadioScripts = {
     ---@param func fun(scriptManager:RadioScriptManager,newGame:boolean):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires after the game loads the FMOD sound banks.
-Events.OnLoadSoundBanks.OnLoadSoundBanks = {
+Events.OnLoadSoundBanks = {
     ---@param func function
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires upon entering the main menu.
-Events.OnMainMenuEnter.OnMainMenuEnter = {
+Events.OnMainMenuEnter = {
     ---@param func function
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires after a character completes a mechanic action on a vehicle.
-Events.OnMechanicActionDone.OnMechanicActionDone = {
+Events.OnMechanicActionDone = {
     ---@param func fun(character:IsoGameCharacter,success:boolean,vehicleId:int,partId:String,itemId:long,installing:boolean):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Multiplayer) (Client) Fires when the admin mini-scoreboard is updated.
-Events.OnMiniScoreboardUpdate.OnMiniScoreboardUpdate = {
+Events.OnMiniScoreboardUpdate = {
     ---@param func function
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires on the main menu when a mod's files have changed.
-Events.OnModsModified.OnModsModified = {
+Events.OnModsModified = {
     ---@param func function
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires when the player left clicks, as long as the input isn't eaten by UI.
-Events.OnMouseDown.OnMouseDown = {
+Events.OnMouseDown = {
     ---@param func fun(x:double,y:double):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires every frame, unless mouse movement is eaten by something else. The latter two values are the first two multiplied by the mouse player's zoom level.
-Events.OnMouseMove.OnMouseMove = {
+Events.OnMouseMove = {
     ---@param func fun(x:int,y:int,xMultiplied:int,yMultiplied:int):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires whenever the player releases the left mouse button, unless the input is eaten by UI.
-Events.OnMouseUp.OnMouseUp = {
+Events.OnMouseUp = {
     ---@param func fun(x:double,y:double):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires when the player triggers an NPC event.
-Events.OnMultiTriggerNPCEvent.OnMultiTriggerNPCEvent = {
+Events.OnMultiTriggerNPCEvent = {
     ---@param func fun(type:String,data:table,def:BuildingDef):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires when a new fire is started.
-Events.OnNewFire.OnNewFire = {
+Events.OnNewFire = {
     ---@param func fun(fire:IsoFire):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires whenever a local player character is created for the first time.
-Events.OnNewGame.OnNewGame = {
+Events.OnNewGame = {
     ---@param func fun(player:IsoPlayer,square:IsoGridSquare):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires before an object is removed from the world.
-Events.OnObjectAboutToBeRemoved.OnObjectAboutToBeRemoved = {
+Events.OnObjectAboutToBeRemoved = {
     ---@param func fun(object:IsoObject):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires when an object is added to the world. Note: usually not called on the client, but is in some cases.
-Events.OnObjectAdded.OnObjectAdded = {
+Events.OnObjectAdded = {
     ---@param func fun(object:IsoObject):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires when two objects collide with each other.
-Events.OnObjectCollide.OnObjectCollide = {
+Events.OnObjectCollide = {
     ---@param func fun(object:IsoMovingObject,collided:IsoObject):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires when the player left clicks a world object.
-Events.OnObjectLeftMouseButtonDown.OnObjectLeftMouseButtonDown = {
+Events.OnObjectLeftMouseButtonDown = {
     ---@param func fun(object:IsoObject,x:double,y:double):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires when the player releases left click on a world object.
-Events.OnObjectLeftMouseButtonUp.OnObjectLeftMouseButtonUp = {
+Events.OnObjectLeftMouseButtonUp = {
     ---@param func fun(object:IsoObject,x:double,y:double):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires when the player right clicks a world object.
-Events.OnObjectRightMouseButtonDown.OnObjectRightMouseButtonDown = {
+Events.OnObjectRightMouseButtonDown = {
     ---@param func fun(object:IsoObject,x:double,y:double):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires when the player releases right click on a world object.
-Events.OnObjectRightMouseButtonUp.OnObjectRightMouseButtonUp = {
+Events.OnObjectRightMouseButtonUp = {
     ---@param func fun(object:IsoObject,x:double,y:double):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires when a local player finishes attacking.
-Events.OnPlayerAttackFinished.OnPlayerAttackFinished = {
+Events.OnPlayerAttackFinished = {
     ---@param func fun(player:IsoPlayer,weapon:HandWeapon):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires when a local player dies.
-Events.OnPlayerDeath.OnPlayerDeath = {
+Events.OnPlayerDeath = {
     ---@param func fun(player:IsoPlayer):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires every time a local player takes damage. Bleeding bodyparts fire the event once per frame each. Possible damageTypes are: POISON, HUNGRY, SICK, BLEEDING, THIRST, HEAVYLOAD, INFECTION, LOWWEIGHT, FALLDOWN, FIRE, WEAPONHIT, CARHITDAMAGE, CARCRASHDAMAGE It also fires when zombies are hit by weapons: this is the only case in which the event fires on the server.
-Events.OnPlayerGetDamage.OnPlayerGetDamage = {
+Events.OnPlayerGetDamage = {
     ---@param func fun(character:IsoGameCharacter,damageType:String,damage:float):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires every time a local player moves.
-Events.OnPlayerMove.OnPlayerMove = {
+Events.OnPlayerMove = {
     ---@param func fun(character:IsoPlayer):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires every time a local player updates.
-Events.OnPlayerUpdate.OnPlayerUpdate = {
+Events.OnPlayerUpdate = {
     ---@param func fun(player:IsoPlayer):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires after the distribution tables have been merged.
-Events.OnPostDistributionMerge.OnPostDistributionMerge = {
+Events.OnPostDistributionMerge = {
     ---@param func function
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires after a floor layer has been rendered.
-Events.OnPostFloorLayerDraw.OnPostFloorLayerDraw = {
+Events.OnPostFloorLayerDraw = {
     ---@param func fun(z:int):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires after the map has been loaded.
-Events.OnPostMapLoad.OnPostMapLoad = {
+Events.OnPostMapLoad = {
     ---@param func fun(cell:IsoCell,x:int,y:int):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires after every in-game rendering frame.
-Events.OnPostRender.OnPostRender = {
+Events.OnPostRender = {
     ---@param func function
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires after saving and exiting the game.
-Events.OnPostSave.OnPostSave = {
+Events.OnPostSave = {
     ---@param func function
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires after every UI render frame
-Events.OnPostUIDraw.OnPostUIDraw = {
+Events.OnPostUIDraw = {
     ---@param func function
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires after the distribution tables have been merged.
-Events.OnPreDistributionMerge.OnPreDistributionMerge = {
+Events.OnPreDistributionMerge = {
     ---@param func function
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires while the context menu for an inventory item is being created, before vanilla options are added.
-Events.OnPreFillInventoryObjectContextMenu.OnPreFillInventoryObjectContextMenu = {
+Events.OnPreFillInventoryObjectContextMenu = {
     ---@param func fun(playerIndex:int,context:table,items:table):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires while the context menu for an empty inventory is being created, before vanilla options are added.
-Events.OnPreFillInventoryContextMenuNoItems.OnPreFillInventoryContextMenuNoItems = {
+Events.OnPreFillInventoryContextMenuNoItems = {
     ---@param func fun(playerIndex:int,context:table,isLoot:boolean):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires while the context menu for a world object is being created, before vanilla options are added.
-Events.OnPreFillWorldObjectContextMenu.OnPreFillWorldObjectContextMenu = {
+Events.OnPreFillWorldObjectContextMenu = {
     ---@param func fun(playerIndex:int,context:table,worldobjects:table,test:boolean):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires before the map starts loading.
-Events.OnPreMapLoad.OnPreMapLoad = {
+Events.OnPreMapLoad = {
     ---@param func function
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires when a local player has a gun and presses the button to rack it.
-Events.OnPressRackButton.OnPressRackButton = {
+Events.OnPressRackButton = {
     ---@param func fun(player:IsoPlayer,weapon:HandWeapon):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires when a local player has a gun and presses the button to reload it.
-Events.OnPressReloadButton.OnPressReloadButton = {
+Events.OnPressReloadButton = {
     ---@param func fun(player:IsoPlayer,weapon:HandWeapon):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires when the local player 1 presses their Walk To keybind. The values passed are always 0,0,0 
-Events.OnPressWalkTo.OnPressWalkTo = {
+Events.OnPressWalkTo = {
     ---@param func fun(arg0:int,arg1:int,arg2:int):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires before every UI render frame
-Events.OnPreUIDraw.OnPreUIDraw = {
+Events.OnPreUIDraw = {
     ---@param func function
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Multiplayer) Fires when receiving a global moddata table. The table argument is false if the table did not exist.
-Events.OnReceiveGlobalModData.OnReceiveGlobalModData = {
+Events.OnReceiveGlobalModData = {
     ---@param func fun(tableName:String,table:table):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Multiplayer) Fires when receiving a list of items from another player.
-Events.OnReceiveItemListNet.OnReceiveItemListNet = {
+Events.OnReceiveItemListNet = {
     ---@param func fun(sender:IsoPlayer,items:ArrayList,receiver:IsoPlayer,transferID:String,custom:String):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Multiplayer) (Client) Fires when receiving another client's Userlogs.
-Events.OnReceiveUserlog.OnReceiveUserlog = {
+Events.OnReceiveUserlog = {
     ---@param func fun(username:String,logs:ArrayList):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires when the available containers in the inventory UI change.
-Events.OnRefreshInventoryWindowContainers.OnRefreshInventoryWindowContainers = {
+Events.OnRefreshInventoryWindowContainers = {
     ---@param func fun(inventoryPage:table,reason:String):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires on every rendering tick.
-Events.OnRenderTick.OnRenderTick = {
+Events.OnRenderTick = {
     ---@param func function
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires after Lua has been reloaded.
-Events.OnResetLua.OnResetLua = {
+Events.OnResetLua = {
     ---@param func fun(reason:String):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires whenever the window resolution changes.
-Events.OnResolutionChange.OnResolutionChange = {
+Events.OnResolutionChange = {
     ---@param func fun(oldX:int,oldY:int,newX:int,newY:int):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires when the player right clicks, as long as the input isn't eaten by UI.
-Events.OnRightMouseDown.OnRightMouseDown = {
+Events.OnRightMouseDown = {
     ---@param func fun(x:double,y:double):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires whenever the player releases the right mouse button, unless the input is eaten by UI.
-Events.OnRightMouseUp.OnRightMouseUp = {
+Events.OnRightMouseUp = {
     ---@param func fun(x:double,y:double):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Multiplayer) (Client) Fires every time a safehouse is added, removed or changed.
-Events.OnSafehousesChanged.OnSafehousesChanged = {
+Events.OnSafehousesChanged = {
     ---@param func function
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires while saving the world.
-Events.OnSave.OnSave = {
+Events.OnSave = {
     ---@param func function
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Multiplayer) (Client) Fires when the client receives an update to the in-game scoreboard.
-Events.OnScoreboardUpdate.OnScoreboardUpdate = {
+Events.OnScoreboardUpdate = {
     ---@param func fun(usernames:ArrayList,displayNames:ArrayList,steamIDs:ArrayList):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires when a room becomes visible for the first time.
-Events.OnSeeNewRoom.OnSeeNewRoom = {
+Events.OnSeeNewRoom = {
     ---@param func fun(room:IsoRoom):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Multiplayer) (Client) Fires when a server command sent through sendServerCommand is received by the client.
-Events.OnServerCommand.OnServerCommand = {
+Events.OnServerCommand = {
     ---@param func fun(module:String,command:String,args:table):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Multiplayer) (Client) Fires when the server has finished saving and unpauses the game.
-Events.OnServerFinishSaving.OnServerFinishSaving = {
+Events.OnServerFinishSaving = {
     ---@param func function
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Multiplayer) (Server) Fires when the server has started and can now be connected to.
-Events.OnServerStarted.OnServerStarted = {
+Events.OnServerStarted = {
     ---@param func function
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Multiplayer) (Server) Fires when the server has paused the game to save.
-Events.OnServerStartSaving.OnServerStartSaving = {
+Events.OnServerStartSaving = {
     ---@param func function
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Multiplayer) (Client) Fires when the MPStatistics have been received from the server.
-Events.OnServerStatisticReceived.OnServerStatisticReceived = {
+Events.OnServerStatisticReceived = {
     ---@param func function
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Multiplayer) (Client) Fires when receiving an update about the server's Steam Workshop items while connecting.
-Events.OnServerWorkshopItems.OnServerWorkshopItems = {
+Events.OnServerWorkshopItems = {
     ---@param func fun(type:String):any
     ---@overload fun(func:fun(type:String,requiredItems:ArrayList):any)
     ---@overload fun(func:fun(type:String,message:String):any)
@@ -1055,413 +1055,413 @@ Events.OnServerWorkshopItems.OnServerWorkshopItems = {
     Remove = function(func) end,
 }
 ---(Multiplayer) (Client) Fires when the player sets their favourite chat window tab.
-Events.OnSetDefaultTab.OnSetDefaultTab = {
+Events.OnSetDefaultTab = {
     ---@param func fun(title:String):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Server) Fires when the server GlobalObject system has been initialised.
-Events.OnSGlobalObjectSystemInit.OnSGlobalObjectSystemInit = {
+Events.OnSGlobalObjectSystemInit = {
     ---@param func function
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires when the spawn regions have been loaded.
-Events.OnSpawnRegionsLoaded.OnSpawnRegionsLoaded = {
+Events.OnSpawnRegionsLoaded = {
     ---@param func fun(regions:table):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires when the player has gained or lost a steam friend.
-Events.OnSteamFriendStatusChanged.OnSteamFriendStatusChanged = {
+Events.OnSteamFriendStatusChanged = {
     ---@param func fun(steamID:String):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Multiplayer) (Client) Fires when the player joins a game through steam.
-Events.OnSteamGameJoin.OnSteamGameJoin = {
+Events.OnSteamGameJoin = {
     ---@param func function
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires when the steam server list has been refreshed.
-Events.OnSteamRefreshInternetServers.OnSteamRefreshInternetServers = {
+Events.OnSteamRefreshInternetServers = {
     ---@param func function
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires after a server's rules are retrieved. 'rules' is a table of information about the server.
-Events.OnSteamRulesRefreshComplete.OnSteamRulesRefreshComplete = {
+Events.OnSteamRulesRefreshComplete = {
     ---@param func fun(address:String,port:int,rules:table):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires when receiving a server for the server list.
-Events.OnSteamServerResponded.OnSteamServerResponded = {
+Events.OnSteamServerResponded = {
     ---@param func fun(index:int):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires when receiving a server for the favourited server list.
-Events.OnSteamServerResponded2.OnSteamServerResponded2 = {
+Events.OnSteamServerResponded2 = {
     ---@param func fun(address:String,port:int,server:Server):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires when the client successfully uploads a workshop item.
-Events.OnSteamWorkshopItemCreated.OnSteamWorkshopItemCreated = {
+Events.OnSteamWorkshopItemCreated = {
     ---@param func fun(workshopId:String,bUserNeedsToAcceptWorkshopLegalAgreement:boolean):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires when the client fails to upload a workshop item.
-Events.OnSteamWorkshopItemNotCreated.OnSteamWorkshopItemNotCreated = {
+Events.OnSteamWorkshopItemNotCreated = {
     ---@param func fun(result:int):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires when the client fails to update a workshop item.
-Events.OnSteamWorkshopItemNotUpdated.OnSteamWorkshopItemNotUpdated = {
+Events.OnSteamWorkshopItemNotUpdated = {
     ---@param func fun(result:int):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires when the client successfully updates a workshop item.
-Events.OnSteamWorkshopItemUpdated.OnSteamWorkshopItemUpdated = {
+Events.OnSteamWorkshopItemUpdated = {
     ---@param func fun(bUserNeedsToAcceptWorkshopLegalAgreement:boolean):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires when a local character moves seats in a vehicle.
-Events.OnSwitchVehicleSeat.OnSwitchVehicleSeat = {
+Events.OnSwitchVehicleSeat = {
     ---@param func fun(character:IsoGameCharacter):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Multiplayer) (Client) Fires when a tab is added to the chat.
-Events.OnTabAdded.OnTabAdded = {
+Events.OnTabAdded = {
     ---@param func fun(title:String,tabID:short):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Multiplayer) (Client) Fires when a tab is removed from the chat.
-Events.OnTabRemoved.OnTabRemoved = {
+Events.OnTabRemoved = {
     ---@param func fun(title:String,tabID:short):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires when TemplateText is initialised.
-Events.OnTemplateTextInit.OnTemplateTextInit = {
+Events.OnTemplateTextInit = {
     ---@param func function
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires when a throwable or trap explodes.
-Events.OnThrowableExplode.OnThrowableExplode = {
+Events.OnThrowableExplode = {
     ---@param func fun(throwable:IsoTrap,square:IsoGridSquare):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires when thunder hits.
-Events.OnThunderEvent.OnThunderEvent = {
+Events.OnThunderEvent = {
     ---@param func fun(x:int,y:int,strike:boolean,light:boolean,rumble:boolean):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires every game tick.
-Events.OnTick.OnTick = {
+Events.OnTick = {
     ---@param func fun(tick:double):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires every game tick, even if the game is paused. Tick is 0 while paused.
-Events.OnTickEvenPaused.OnTickEvenPaused = {
+Events.OnTickEvenPaused = {
     ---@param func fun(tick:double):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires when a tile object is removed.
-Events.OnTileRemoved.OnTileRemoved = {
+Events.OnTileRemoved = {
     ---@param func fun(object:IsoObject):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires when a local player toggles search mode.
-Events.onToggleSearchMode.onToggleSearchMode = {
+Events.onToggleSearchMode = {
     ---@param func fun(character:IsoPlayer,isSearchMode:boolean):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires when the player triggers an NPC event.
-Events.OnTriggerNPCEvent.OnTriggerNPCEvent = {
+Events.OnTriggerNPCEvent = {
     ---@param func fun(type:String,data:table,def:BuildingDef):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires when an ISForageIcon is moved or removed.
-Events.onUpdateIcon.onUpdateIcon = {
+Events.onUpdateIcon = {
     ---@param func fun(zoneData:table,iconID:string,icon:table):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Server) Fires when a modded weather stage tries to be updated.
-Events.OnUpdateModdedWeatherStage.OnUpdateModdedWeatherStage = {
+Events.OnUpdateModdedWeatherStage = {
     ---@param func fun(weatherPeriod:WeatherPeriod,weatherStage:WeatherStage,strength:float):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires when a local character enters or exits a vehicle.
-Events.OnUseVehicle.OnUseVehicle = {
+Events.OnUseVehicle = {
     ---@param func fun(character:IsoGameCharacter,vehicle:BaseVehicle,pressedNotTapped:boolean):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires when a vehicle part has become damaged enough to gain a damage overlay.
-Events.OnVehicleDamageTexture.OnVehicleDamageTexture = {
+Events.OnVehicleDamageTexture = {
     ---@param func fun(driver:IsoGameCharacter):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires when the amount of water in an object changes.
-Events.OnWaterAmountChange.OnWaterAmountChange = {
+Events.OnWaterAmountChange = {
     ---@param func fun(object:IsoObject,previousAmount:int):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires when a non-zombie character is hit by an attack.
-Events.OnWeaponHitCharacter.OnWeaponHitCharacter = {
+Events.OnWeaponHitCharacter = {
     ---@param func fun(attacker:IsoGameCharacter,target:IsoGameCharacter,weapon:HandWeapon,damage:float):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Server) Fires when an IsoThumpable is hit by an attack.
-Events.OnWeaponHitThumpable.OnWeaponHitThumpable = {
+Events.OnWeaponHitThumpable = {
     ---@param func fun(attacker:IsoGameCharacter,weapon:HandWeapon,object:IsoThumpable):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires when a tree is hit by an attack.
-Events.OnWeaponHitTree.OnWeaponHitTree = {
+Events.OnWeaponHitTree = {
     ---@param func fun(attacker:IsoGameCharacter,weapon:HandWeapon):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires when XP is being granted for an attack.
-Events.OnWeaponHitXp.OnWeaponHitXp = {
+Events.OnWeaponHitXp = {
     ---@param func fun(attacker:IsoGameCharacter,weapon:HandWeapon,target:IsoMovingObject,damage:float):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires when a player begins swinging a weapon.
-Events.OnWeaponSwing.OnWeaponSwing = {
+Events.OnWeaponSwing = {
     ---@param func fun(attacker:IsoPlayer,weapon:HandWeapon):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires when a local player's attack connects.
-Events.OnWeaponSwingHitPoint.OnWeaponSwingHitPoint = {
+Events.OnWeaponSwingHitPoint = {
     ---@param func fun(attacker:IsoPlayer,weapon:HandWeapon):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Server) Fires when a weather period finishes.
-Events.OnWeatherPeriodComplete.OnWeatherPeriodComplete = {
+Events.OnWeatherPeriodComplete = {
     ---@param func fun(period:WeatherPeriod):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Server) Fires when a weather period progresses a stage.
-Events.OnWeatherPeriodStage.OnWeatherPeriodStage = {
+Events.OnWeatherPeriodStage = {
     ---@param func fun(period:WeatherPeriod):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Server) Fires when a weather period begins.
-Events.OnWeatherPeriodStart.OnWeatherPeriodStart = {
+Events.OnWeatherPeriodStart = {
     ---@param func fun(period:WeatherPeriod):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Server) Fires when a weather period ends early, such as by an admin command.
-Events.OnWeatherPeriodStop.OnWeatherPeriodStop = {
+Events.OnWeatherPeriodStop = {
     ---@param func fun(period:WeatherPeriod):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires whenever a world sound is created.
-Events.OnWorldSound.OnWorldSound = {
+Events.OnWorldSound = {
     ---@param func fun(x:int,y:int,z:int,radius:int,volume:int,source:Object):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires when a local zombie dies. The zombie's inventory is not filled with loot when this event fires, but their clothing and attached items are added.
-Events.OnZombieDead.OnZombieDead = {
+Events.OnZombieDead = {
     ---@param func fun(zombie:IsoZombie):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires whenever a zombie updates.
-Events.OnZombieUpdate.OnZombieUpdate = {
+Events.OnZombieUpdate = {
     ---@param func fun(zombie:IsoZombie):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires before the foraging system processes item category definitions.
-Events.preAddCatDefs.preAddCatDefs = {
+Events.preAddCatDefs = {
     ---@param func fun(system:table):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires before the foraging system processes any definitions.
-Events.preAddForageDefs.preAddForageDefs = {
+Events.preAddForageDefs = {
     ---@param func fun(system:table):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires before the foraging system processes item definitions.
-Events.preAddItemDefs.preAddItemDefs = {
+Events.preAddItemDefs = {
     ---@param func fun(system:table):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires before the foraging system processes trait and profession definitions.
-Events.preAddSkillDefs.preAddSkillDefs = {
+Events.preAddSkillDefs = {
     ---@param func fun(system:table):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires before the foraging system processes zone definitions.
-Events.preAddZoneDefs.preAddZoneDefs = {
+Events.preAddZoneDefs = {
     ---@param func fun(system:table):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Multiplayer) (Client) Fires when the client receives a faction invite.
-Events.ReceiveFactionInvite.ReceiveFactionInvite = {
+Events.ReceiveFactionInvite = {
     ---@param func fun(factionName:String,hostUsername:String):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Multiplayer) (Client) Fires when the client receives a safehouse invite.
-Events.ReceiveSafehouseInvite.ReceiveSafehouseInvite = {
+Events.ReceiveSafehouseInvite = {
     ---@param func fun(title:String,hostUsername:String):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Multiplayer) (Client) Fires when the client receives a trade request.
-Events.RequestTrade.RequestTrade = {
+Events.RequestTrade = {
     ---@param func fun(requester:String):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires before a square is unloaded.
-Events.ReuseGridsquare.ReuseGridsquare = {
+Events.ReuseGridsquare = {
     ---@param func fun(square:IsoGridSquare):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Multiplayer) (Server) Fires when a client is requesting server moddata.
-Events.SendCustomModData.SendCustomModData = {
+Events.SendCustomModData = {
     ---@param func function
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Multiplayer) (Client) Fires when receiving a ping response from the server. The 'numClients' string is suffixed with '/512'.
-Events.ServerPinged.ServerPinged = {
+Events.ServerPinged = {
     ---@param func fun(clientAddress:String,numClients:String):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Multiplayer) (Client) Fires when the client switches chat tabs.
-Events.SwitchChatStream.SwitchChatStream = {
+Events.SwitchChatStream = {
     ---@param func function
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Multiplayer) (Client) Fires when the client receives changes to a faction.
-Events.SyncFaction.SyncFaction = {
+Events.SyncFaction = {
     ---@param func fun(faction:String):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Multiplayer) (Client) Fires when the other player in a trade adds an item.
-Events.TradingUIAddItem.TradingUIAddItem = {
+Events.TradingUIAddItem = {
     ---@param func fun(player:IsoPlayer,item:InventoryItem):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Multiplayer) (Client) Fires when the other player in a trade removes an item.
-Events.TradingUIRemoveItem.TradingUIRemoveItem = {
+Events.TradingUIRemoveItem = {
     ---@param func fun(player:IsoPlayer,index:int):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Multiplayer) (Client) Fires when the other player in a trade changes the state of the trade.
-Events.TradingUIUpdateState.TradingUIUpdateState = {
+Events.TradingUIUpdateState = {
     ---@param func fun(player:IsoPlayer,state:int):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Multiplayer) (Client) Fires when receiving the list of tickets from the server.
-Events.ViewTickets.ViewTickets = {
+Events.ViewTickets = {
     ---@param func fun(tickets:ArrayList):any
     Add = function(func) end,
     ---@param func function
@@ -1471,35 +1471,35 @@ Events.ViewTickets.ViewTickets = {
 Hook = {}
 
 ---(Client) Called every tick while a local character is pressing their attack button and is able to attack.
-Hook.Attack.ViewTickets = {
+Hook.Attack = {
     ---@param func fun(attacker:IsoLivingCharacter,chargeDelta:float,weapon:HandWeapon):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Called whenever a character automatically drinks while auto-drink is turned on.
-Hook.AutoDrink.ViewTickets = {
+Hook.AutoDrink = {
     ---@param func fun(character:IsoGameCharacter):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Called when a character's stats are being updated. Character health is not included.
-Hook.CalculateStats.ViewTickets = {
+Hook.CalculateStats = {
     ---@param func fun(character:IsoGameCharacter):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Called when the effects of an attack are being calculated.
-Hook.WeaponHitCharacter.ViewTickets = {
+Hook.WeaponHitCharacter = {
     ---@param func fun(attacker:IsoGameCharacter,target:IsoGameCharacter,weapon:HandWeapon,damageSplit:float):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Called when a weapon is swung to find targets
-Hook.WeaponSwing.ViewTickets = {
+Hook.WeaponSwing = {
     ---@param func fun(character:IsoGameCharacter,weapon:HandWeapon):any
     Add = function(func) end,
     ---@param func function
