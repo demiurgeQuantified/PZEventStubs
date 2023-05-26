@@ -1,5 +1,5 @@
 # PZEventStubs
-PZEventStubs is a tool for generating Lua annotations for Project Zomboid events and hooks to allow for autocompletion, type checking and easy access to documentation. You can preview the documentation [here](../../../PZEventDoc/blob/develop/reference/Events.md).
+PZEventStubs provides Lua annotations for Project Zomboid events and hooks to allow for autocompletion, type checking and easy access to documentation. You can view the documentation as text [here](../../../PZEventDoc/blob/develop/reference/Events.md).
 ![Autocompletion for Events](../../../PZEventDoc/blob/develop/images/1.png)
 ![Annotation for Events](../../../PZEventDoc/blob/develop/images/2.png)
 ![Parameter types for Events](../../../PZEventDoc/blob/develop/images/3.png)
