@@ -1,8 +1,8 @@
 # PZEventStubs
-PZEventStubs provides Lua annotations for Project Zomboid events and hooks to allow for autocompletion, type checking and easy access to documentation. You can view the documentation as text [here](../../../PZEventDoc/blob/develop/reference/Events.md).
-![Autocompletion for Events](../../../PZEventDoc/blob/develop/images/1.png)
-![Annotation for Events](../../../PZEventDoc/blob/develop/images/2.png)
-![Parameter types for Events](../../../PZEventDoc/blob/develop/images/3.png)
+PZEventStubs provides Lua annotations for Project Zomboid events and hooks to allow for autocompletion, type checking and easy access to documentation. You can view the documentation as text [here](https://github.com/demiurgeQuantified/PZEventDoc/blob/develop/docs/Events.md).
+![Autocompletion for Events](https://github.com/demiurgeQuantified/PZEventDoc/blob/develop/docs/assets/1.png)
+![Annotation for Events](https://github.com/demiurgeQuantified/PZEventDoc/blob/develop/docs/assets/2.png)
+![Parameter types for Events](https://github.com/demiurgeQuantified/PZEventDoc/blob/develop/docs/assets/3.png)
 
 # Usage
 ## Umbrella
