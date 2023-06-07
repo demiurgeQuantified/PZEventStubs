@@ -104,7 +104,7 @@ Events.OnAcceptInvite = {
 }
 ---Fires after the foraging item definitions are created.
 Events.onAddForageDefs = {
-    ---@param func fun(forageSystem:table):any
+    ---@param func fun(forageSystem:forageSystem):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
@@ -329,14 +329,14 @@ Events.OnDistributionMerge = {
 }
 ---(Client) Fires when the local mouse and keyboard player builds something.
 Events.OnDoTileBuilding2 = {
-    ---@param func fun(cursor:table,bRender:boolean,x:int,y:int,z:int,square:IsoGridSquare):any
+    ---@param func fun(cursor:ISMoveableCursor,bRender:boolean,x:int,y:int,z:int,square:IsoGridSquare):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires when a controller player builds something.
 Events.OnDoTileBuilding3 = {
-    ---@param func fun(cursor:table,bRender:boolean,x:int,y:int,z:int,square:IsoGridSquare):any
+    ---@param func fun(cursor:ISMoveableCursor,bRender:boolean,x:int,y:int,z:int,square:IsoGridSquare):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
@@ -399,28 +399,28 @@ Events.OnFillContainer = {
 }
 ---(Client) Fires after the context menu for an inventory item is created.
 Events.OnFillInventoryObjectContextMenu = {
-    ---@param func fun(playerIndex:int,context:table,items:table):any
+    ---@param func fun(playerIndex:int,context:ISContextMenu,items:table):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires after the context menu for an empty inventory is created.
 Events.OnFillInventoryContextMenuNoItems = {
-    ---@param func fun(playerIndex:int,context:table,isLoot:boolean):any
+    ---@param func fun(playerIndex:int,context:ISContextMenu,isLoot:boolean):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires when opening the context menu for a foraging item.
 Events.onFillSearchIconContextMenu = {
-    ---@param func fun(context:table,icon:table):any
+    ---@param func fun(context:ISContextMenu,icon:ISBaseIcon):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires after the context menu for a world object is created.
 Events.OnFillWorldObjectContextMenu = {
-    ---@param func fun(playerIndex:int,context:table,worldobjects:table,test:boolean):any
+    ---@param func fun(playerIndex:int,context:ISContextMenu,worldobjects:table,test:boolean):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
@@ -726,7 +726,7 @@ Events.OnNewGame = {
     ---@param func function
     Remove = function(func) end,
 }
----Fires before an object is removed from the world.
+---Fires before a tile object is removed from the world, either because it has been destroyed or because it has been unloaded.
 Events.OnObjectAboutToBeRemoved = {
     ---@param func fun(object:IsoObject):any
     Add = function(func) end,
@@ -861,21 +861,21 @@ Events.OnPreDistributionMerge = {
 }
 ---(Client) Fires while the context menu for an inventory item is being created, before vanilla options are added.
 Events.OnPreFillInventoryObjectContextMenu = {
-    ---@param func fun(playerIndex:int,context:table,items:table):any
+    ---@param func fun(playerIndex:int,context:ISContextMenu,items:table):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires while the context menu for an empty inventory is being created, before vanilla options are added.
 Events.OnPreFillInventoryContextMenuNoItems = {
-    ---@param func fun(playerIndex:int,context:table,isLoot:boolean):any
+    ---@param func fun(playerIndex:int,context:ISContextMenu,isLoot:boolean):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---(Client) Fires while the context menu for a world object is being created, before vanilla options are added.
 Events.OnPreFillWorldObjectContextMenu = {
-    ---@param func fun(playerIndex:int,context:table,worldobjects:table,test:boolean):any
+    ---@param func fun(playerIndex:int,context:ISContextMenu,worldobjects:table,test:boolean):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
@@ -917,7 +917,7 @@ Events.OnPreUIDraw = {
 }
 ---(Multiplayer) Fires when receiving a global moddata table. The table argument is false if the table did not exist.
 Events.OnReceiveGlobalModData = {
-    ---@param func fun(tableName:String,table:table):any
+    ---@param func fun(tableName:String,data:table):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
@@ -938,7 +938,7 @@ Events.OnReceiveUserlog = {
 }
 ---(Client) Fires when the available containers in the inventory UI change.
 Events.OnRefreshInventoryWindowContainers = {
-    ---@param func fun(inventoryPage:table,reason:String):any
+    ---@param func fun(inventoryPage:ISInventoryPage,reason:String):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
@@ -1222,7 +1222,7 @@ Events.OnTriggerNPCEvent = {
 }
 ---(Client) Fires when an ISForageIcon is moved or removed.
 Events.onUpdateIcon = {
-    ---@param func fun(zoneData:table,iconID:string,icon:table):any
+    ---@param func fun(zoneData:table,iconID:string,icon:ISForageIcon):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
@@ -1348,35 +1348,35 @@ Events.OnZombieUpdate = {
 }
 ---Fires before the foraging system processes item category definitions.
 Events.preAddCatDefs = {
-    ---@param func fun(system:table):any
+    ---@param func fun(system:forageSystem):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires before the foraging system processes any definitions.
 Events.preAddForageDefs = {
-    ---@param func fun(system:table):any
+    ---@param func fun(system:forageSystem):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires before the foraging system processes item definitions.
 Events.preAddItemDefs = {
-    ---@param func fun(system:table):any
+    ---@param func fun(system:forageSystem):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires before the foraging system processes trait and profession definitions.
 Events.preAddSkillDefs = {
-    ---@param func fun(system:table):any
+    ---@param func fun(system:forageSystem):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
 ---Fires before the foraging system processes zone definitions.
 Events.preAddZoneDefs = {
-    ---@param func fun(system:table):any
+    ---@param func fun(system:forageSystem):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
