@@ -151,7 +151,7 @@ Events.OnCharacterCollide = {
     ---@param func function
     Remove = function(func) end,
 }
----Fires when a character dies.
+---Fires when any character dies, including zombies and players regardless of whether they are local.
 Events.OnCharacterDeath = {
     ---@param func fun(character:IsoGameCharacter):any
     Add = function(func) end,
@@ -207,7 +207,7 @@ Events.OnConnectFailed = {
     ---@param func function
     Remove = function(func) end,
 }
----(Multiplayer) (Client) Fires while connecting to a server.
+---(Multiplayer) (Client) Fires after successfully connecting to a server on the main menu, before character creation begins.
 Events.OnConnected = {
     ---@param func function
     Add = function(func) end,
@@ -432,7 +432,7 @@ Events.OnGameBoot = {
     ---@param func function
     Remove = function(func) end,
 }
----Fires upon finishing loading and entering the game.
+---(Client) Fires upon finishing loading and entering the game.
 Events.OnGameStart = {
     ---@param func function
     Add = function(func) end,
@@ -607,7 +607,7 @@ Events.OnKeyStartPressed = {
     ---@param func function
     Remove = function(func) end,
 }
----Fires upon finishing loading and entering the game.
+---(Client) Fires upon finishing loading and entering the game.
 Events.OnLoad = {
     ---@param func function
     Add = function(func) end,
@@ -796,14 +796,14 @@ Events.OnPlayerGetDamage = {
     ---@param func function
     Remove = function(func) end,
 }
----(Client) Fires every time a local player moves.
+---(Client) Fires during each local player's update if they are walking.
 Events.OnPlayerMove = {
     ---@param func fun(character:IsoPlayer):any
     Add = function(func) end,
     ---@param func function
     Remove = function(func) end,
 }
----(Client) Fires every time a local player updates.
+---(Client) Fires during each local player's update (every tick).
 Events.OnPlayerUpdate = {
     ---@param func fun(player:IsoPlayer):any
     Add = function(func) end,
@@ -1332,7 +1332,7 @@ Events.OnWorldSound = {
     ---@param func function
     Remove = function(func) end,
 }
----(Client) Fires when a local zombie dies. The zombie's inventory is not filled with loot when this event fires, but their clothing and attached items are added.
+---Fires when a zombie dies. The zombie's inventory is not filled with loot when this event fires, but their clothing and attached items are added.
 Events.OnZombieDead = {
     ---@param func fun(zombie:IsoZombie):any
     Add = function(func) end,
