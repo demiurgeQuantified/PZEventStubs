@@ -985,7 +985,7 @@ Events.OnSafehousesChanged = {
     ---@param func function
     Remove = function(func) end,
 }
----Fires while saving the world.
+---Fires while saving the world, after characters and sandbox options have been saved, but before global mod data and the world have been saved.
 Events.OnSave = {
     ---@param func function
     Add = function(func) end,
