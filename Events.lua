@@ -3,1501 +3,2138 @@
 
 -- If it helped you, please consider leaving me a tip ^u^
 -- https://ko-fi.com/starseamstress
+
 Events = {}
----(Multiplayer) (Client) Fires when a player accepts an invite to a faction.
+
+---@alias Callback_AcceptedFactionInvite fun(factionName:String,username:String):any
+
+---(Multiplayer) (Client) Fires when receiving confirmation that a local player has accepted a faction invite.
 Events.AcceptedFactionInvite = {
-    ---@param func fun(factionName:String,username:String):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_AcceptedFactionInvite
+    Add = function(callback) end,
+    ---@param callback Callback_AcceptedFactionInvite
+    Remove = function(callback) end,
 }
+
+---@alias Callback_AcceptedSafehouseInvite fun(safehouseTitle:String,username:String):any
+
 ---(Multiplayer) (Client) Fires when a player accepts an invite to a safehouse.
 Events.AcceptedSafehouseInvite = {
-    ---@param func fun(safehouseTitle:String,username:String):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_AcceptedSafehouseInvite
+    Add = function(callback) end,
+    ---@param callback Callback_AcceptedSafehouseInvite
+    Remove = function(callback) end,
 }
+
+---@alias Callback_AcceptedTrade fun(accepted:boolean):any
+
 ---(Multiplayer) (Client) Fires when the other player in the client's current trade accepts or declines the trade.
 Events.AcceptedTrade = {
-    ---@param func fun(accepted:boolean):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_AcceptedTrade
+    Add = function(callback) end,
+    ---@param callback Callback_AcceptedTrade
+    Remove = function(callback) end,
 }
+
+---@alias Callback_AddXP fun(character:IsoGameCharacter,perk:PerkFactory.Perk,amount:float):any
+
 ---(Client) Fires when a local character gains xp, unless it is flagged not to.
 Events.AddXP = {
-    ---@param func fun(character:IsoGameCharacter,perk:PerkFactory.Perk,amount:float):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_AddXP
+    Add = function(callback) end,
+    ---@param callback Callback_AddXP
+    Remove = function(callback) end,
 }
+
+---@alias Callback_DoSpecialTooltip fun(tooltip:ObjectTooltip,square:IsoGridSquare):any
+
 ---Fires when updating the tooltip of an IsoObject with a special tooltip.
 Events.DoSpecialTooltip = {
-    ---@param func fun(tooltip:ObjectTooltip,square:IsoGridSquare):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_DoSpecialTooltip
+    Add = function(callback) end,
+    ---@param callback Callback_DoSpecialTooltip
+    Remove = function(callback) end,
 }
+
+---@alias Callback_EveryDays function
+
 ---Fires at 0:00 every in-game day.
 Events.EveryDays = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_EveryDays
+    Add = function(callback) end,
+    ---@param callback Callback_EveryDays
+    Remove = function(callback) end,
 }
+
+---@alias Callback_EveryHours function
+
 ---Fires at the start of every in-game hour.
 Events.EveryHours = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_EveryHours
+    Add = function(callback) end,
+    ---@param callback Callback_EveryHours
+    Remove = function(callback) end,
 }
+
+---@alias Callback_EveryOneMinute function
+
 ---Fires every in-game minute.
 Events.EveryOneMinute = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_EveryOneMinute
+    Add = function(callback) end,
+    ---@param callback Callback_EveryOneMinute
+    Remove = function(callback) end,
 }
+
+---@alias Callback_EveryTenMinutes function
+
 ---Fires every ten in-game minutes.
 Events.EveryTenMinutes = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_EveryTenMinutes
+    Add = function(callback) end,
+    ---@param callback Callback_EveryTenMinutes
+    Remove = function(callback) end,
 }
+
+---@alias Callback_LevelPerk fun(character:IsoGameCharacter,perk:PerkFactory.Perk,level:int,increased:boolean):any
+
 ---(Client) Fires after a local character gains or loses a perk level.
 Events.LevelPerk = {
-    ---@param func fun(character:IsoGameCharacter,perk:PerkFactory.Perk,level:int,increased:boolean):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_LevelPerk
+    Add = function(callback) end,
+    ---@param callback Callback_LevelPerk
+    Remove = function(callback) end,
 }
+
+---@alias Callback_LoadGridsquare fun(square:IsoGridSquare):any
+
 ---Fires after a new square is loaded.
 Events.LoadGridsquare = {
-    ---@param func fun(square:IsoGridSquare):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_LoadGridsquare
+    Add = function(callback) end,
+    ---@param callback Callback_LoadGridsquare
+    Remove = function(callback) end,
 }
+
+---@alias Callback_MngInvReceiveItems fun(itemtable:table):any
+
 ---(Multiplayer) (Client) Fires when managing a remote player's inventory from the admin menu.
 Events.MngInvReceiveItems = {
-    ---@param func fun(itemtable:table):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_MngInvReceiveItems
+    Add = function(callback) end,
+    ---@param callback Callback_MngInvReceiveItems
+    Remove = function(callback) end,
 }
----(Client) Fires when a local character (zombie, player) changes state.
+
+---@alias Callback_OnAIStateChange fun(character:IsoGameCharacter,currentState:State,previousState:State):any
+
+---(Client) Fires when a local zombie or any loaded player changes state.
 Events.OnAIStateChange = {
-    ---@param func fun(character:IsoGameCharacter,currentState:State,previousState:State):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnAIStateChange
+    Add = function(callback) end,
+    ---@param callback Callback_OnAIStateChange
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnAcceptInvite fun(connectString:String):any
+
 ---(Client) Fires when the client accepts a steam invite to a server. See Steamworks API
 Events.OnAcceptInvite = {
-    ---@param func fun(connectString:String):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnAcceptInvite
+    Add = function(callback) end,
+    ---@param callback Callback_OnAcceptInvite
+    Remove = function(callback) end,
 }
+
+---@alias Callback_onAddForageDefs fun(forageSystem:forageSystem):any
+
 ---Fires after the foraging item definitions are created.
 Events.onAddForageDefs = {
-    ---@param func fun(forageSystem:forageSystem):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_onAddForageDefs
+    Add = function(callback) end,
+    ---@param callback Callback_onAddForageDefs
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnAddMessage fun(message:ChatMessage,tabId:short):any
+
 ---(Multiplayer) (Client) Fires when a message is added to chat.
 Events.OnAddMessage = {
-    ---@param func fun(message:ChatMessage,tabId:short):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnAddMessage
+    Add = function(callback) end,
+    ---@param callback Callback_OnAddMessage
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnAdminMessage fun(message:String,x:int,y:int,z:int):any
+
 ---(Multiplayer) (Client) Fires when a ticket is created and the local player is an admin. The co-ordinates are the location of the player creating the ticket.
 Events.OnAdminMessage = {
-    ---@param func fun(message:String,x:int,y:int,z:int):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnAdminMessage
+    Add = function(callback) end,
+    ---@param callback Callback_OnAdminMessage
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnAmbientSound fun(x:float,y:float,z:float):any
+
 ---Fires whenever a sound meta event or building alarm is triggered.
 Events.OnAmbientSound = {
-    ---@param func fun(x:float,y:float,z:float):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnAmbientSound
+    Add = function(callback) end,
+    ---@param callback Callback_OnAmbientSound
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnCGlobalObjectSystemInit function
+
 ---(Client) Fires when the client GlobalObject system is being initialised.
 Events.OnCGlobalObjectSystemInit = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnCGlobalObjectSystemInit
+    Add = function(callback) end,
+    ---@param callback Callback_OnCGlobalObjectSystemInit
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnChallengeQuery function
+
 ---(Client) Fires when the main menu wants to check for challenge maps.
 Events.OnChallengeQuery = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnChallengeQuery
+    Add = function(callback) end,
+    ---@param callback Callback_OnChallengeQuery
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnCharacterCollide fun(character:IsoGameCharacter,collidedCharacter:IsoGameCharacter):any
+
 ---Fires when a non-zombie character collides with another (possibly zombie) character.
 Events.OnCharacterCollide = {
-    ---@param func fun(character:IsoGameCharacter,collidedCharacter:IsoGameCharacter):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnCharacterCollide
+    Add = function(callback) end,
+    ---@param callback Callback_OnCharacterCollide
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnCharacterDeath fun(character:IsoGameCharacter):any
+
 ---Fires when any character dies, including zombies and players regardless of whether they are local.
 Events.OnCharacterDeath = {
-    ---@param func fun(character:IsoGameCharacter):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnCharacterDeath
+    Add = function(callback) end,
+    ---@param callback Callback_OnCharacterDeath
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnChatWindowInit function
+
 ---(Multiplayer) (Client) Fires when the chat window is initialised.
 Events.OnChatWindowInit = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnChatWindowInit
+    Add = function(callback) end,
+    ---@param callback Callback_OnChatWindowInit
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnClientCommand fun(module:String,command:String,player:IsoPlayer,args:table):any
+
 ---(Server) Fires when a client command sent through sendClientCommand is received by the server.
 Events.OnClientCommand = {
-    ---@param func fun(module:String,command:String,player:IsoPlayer,args:table):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnClientCommand
+    Add = function(callback) end,
+    ---@param callback Callback_OnClientCommand
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnClimateManagerInit fun(climateManager:ClimateManager):any
+
 ---Fires when the climate manager is initialised.
 Events.OnClimateManagerInit = {
-    ---@param func fun(climateManager:ClimateManager):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnClimateManagerInit
+    Add = function(callback) end,
+    ---@param callback Callback_OnClimateManagerInit
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnClimateTick fun(climateManager:ClimateManager):any
+
 ---Fires every climate manager tick.
 Events.OnClimateTick = {
-    ---@param func fun(climateManager:ClimateManager):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnClimateTick
+    Add = function(callback) end,
+    ---@param callback Callback_OnClimateTick
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnClimateTickDebug fun(climateManager:ClimateManager):any
+
 ---(Client) Fires every climate manager tick, but only on the client and only when debug mode is enabled.
 Events.OnClimateTickDebug = {
-    ---@param func fun(climateManager:ClimateManager):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnClimateTickDebug
+    Add = function(callback) end,
+    ---@param callback Callback_OnClimateTickDebug
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnClothingUpdated fun(character:IsoGameCharacter):any
+
 ---(Client) Fires every time a character's clothing is updated. This includes when accumulating dirt or blood.
 Events.OnClothingUpdated = {
-    ---@param func fun(character:IsoGameCharacter):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnClothingUpdated
+    Add = function(callback) end,
+    ---@param callback Callback_OnClothingUpdated
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnConnectFailed fun(message:String):any
+
 ---(Multiplayer) (Client) Fires when the client fails to connect to a server.
 Events.OnConnectFailed = {
-    ---@param func fun(message:String):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnConnectFailed
+    Add = function(callback) end,
+    ---@param callback Callback_OnConnectFailed
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnConnected function
+
 ---(Multiplayer) (Client) Fires after successfully connecting to a server on the main menu, before character creation begins.
 Events.OnConnected = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnConnected
+    Add = function(callback) end,
+    ---@param callback Callback_OnConnected
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnConnectionStateChanged fun(state:String,message:String,place:int|nil):any
+
 ---(Multiplayer) (Client) Fires when the client's connection state is updated while trying to connect to a server.
 Events.OnConnectionStateChanged = {
-    ---@param func fun(state:String,message:String):any
-    ---@overload fun(func:fun(state:String,message:String,place:int):any)
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnConnectionStateChanged
+    Add = function(callback) end,
+    ---@param callback Callback_OnConnectionStateChanged
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnContainerUpdate fun(object:any):any
+
 ---(Client) Fires when a container is added or removed from the world.
 Events.OnContainerUpdate = {
-    ---@param func fun(object:any):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnContainerUpdate
+    Add = function(callback) end,
+    ---@param callback Callback_OnContainerUpdate
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnCoopJoinFailed fun(playerIndex:int):any
+
 ---(Client) Fires when a splitscreen character fails to be added.
 Events.OnCoopJoinFailed = {
-    ---@param func fun(playerIndex:int):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnCoopJoinFailed
+    Add = function(callback) end,
+    ---@param callback Callback_OnCoopJoinFailed
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnCoopServerMessage fun(tag:String,cookie:String,payload:String):any
+
 ---(Multiplayer) (Server) Fires when receiving a server message during a co-op (in-game hosted) game.
 Events.OnCoopServerMessage = {
-    ---@param func fun(tag:String,cookie:String,payload:String):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnCoopServerMessage
+    Add = function(callback) end,
+    ---@param callback Callback_OnCoopServerMessage
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnCreateLivingCharacter fun(character:IsoLivingCharacter,desc:SurvivorDesc):any
+
 ---(Client) Fires when an IsoPlayer or IsoSurvivor object is created.
 Events.OnCreateLivingCharacter = {
-    ---@param func fun(character:IsoLivingCharacter,desc:SurvivorDesc):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnCreateLivingCharacter
+    Add = function(callback) end,
+    ---@param callback Callback_OnCreateLivingCharacter
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnCreatePlayer fun(playerIndex:int,player:IsoPlayer):any
+
 ---(Client) Fires every time a local player loads into the world.
 Events.OnCreatePlayer = {
-    ---@param func fun(playerIndex:int,player:IsoPlayer):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnCreatePlayer
+    Add = function(callback) end,
+    ---@param callback Callback_OnCreatePlayer
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnCreateSurvivor fun(survivor:IsoSurvivor):any
+
 ---(Client) Fires when an IsoSurvivor object is created.
 Events.OnCreateSurvivor = {
-    ---@param func fun(survivor:IsoSurvivor):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnCreateSurvivor
+    Add = function(callback) end,
+    ---@param callback Callback_OnCreateSurvivor
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnCreateUI function
+
 ---(Client) Fires when the UI is initialised.
 Events.OnCreateUI = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnCreateUI
+    Add = function(callback) end,
+    ---@param callback Callback_OnCreateUI
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnCustomUIKey fun(key:int):any
+
 ---(Client) Fires when a key that is not used by vanilla UI is released.
 Events.OnCustomUIKey = {
-    ---@param func fun(key:int):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnCustomUIKey
+    Add = function(callback) end,
+    ---@param callback Callback_OnCustomUIKey
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnCustomUIKeyReleased fun(key:int):any
+
 ---(Client) Fires when a key that is not used by vanilla UI is released.
 Events.OnCustomUIKeyReleased = {
-    ---@param func fun(key:int):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnCustomUIKeyReleased
+    Add = function(callback) end,
+    ---@param callback Callback_OnCustomUIKeyReleased
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnCustomUIKeyPressed fun(key:int):any
+
 ---(Client) Fires when a key that is not used by vanilla UI is pressed.
 Events.OnCustomUIKeyPressed = {
-    ---@param func fun(key:int):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnCustomUIKeyPressed
+    Add = function(callback) end,
+    ---@param callback Callback_OnCustomUIKeyPressed
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnDestroyIsoThumpable fun(object:IsoThumpable):any
+
 ---Fires when an IsoThumpable object is destroyed by damage.
 Events.OnDestroyIsoThumpable = {
-    ---@param func fun(object:IsoThumpable):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnDestroyIsoThumpable
+    Add = function(callback) end,
+    ---@param callback Callback_OnDestroyIsoThumpable
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnDeviceText fun(guid:String,codes:String,x:float,y:float,z:float,text:String,device:WaveSignalDevice):any
+
 ---(Client) Fires whenever a radio displays text.
 Events.OnDeviceText = {
-    ---@param func fun(guid:String,codes:String,x:float,y:float,z:float,text:String,device:WaveSignalDevice):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnDeviceText
+    Add = function(callback) end,
+    ---@param callback Callback_OnDeviceText
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnDisconnect function
+
 ---(Multiplayer) (Client) Fires when the client disconnects from a server.
 Events.OnDisconnect = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnDisconnect
+    Add = function(callback) end,
+    ---@param callback Callback_OnDisconnect
+    Remove = function(callback) end,
 }
+
+---@alias Callback_onDisableSearchMode fun(character:IsoPlayer,isSearchMode:boolean):any
+
 ---(Client) Fires when a local player disables search mode.
 Events.onDisableSearchMode = {
-    ---@param func fun(character:IsoPlayer,isSearchMode:boolean):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_onDisableSearchMode
+    Add = function(callback) end,
+    ---@param callback Callback_onDisableSearchMode
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnDistributionMerge function
+
 ---Fires when the distribution tables merge.
 Events.OnDistributionMerge = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnDistributionMerge
+    Add = function(callback) end,
+    ---@param callback Callback_OnDistributionMerge
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnDoTileBuilding2 fun(cursor:ISMoveableCursor,bRender:boolean,x:int,y:int,z:int,square:IsoGridSquare):any
+
 ---(Client) Fires when the local mouse and keyboard player builds something.
 Events.OnDoTileBuilding2 = {
-    ---@param func fun(cursor:ISMoveableCursor,bRender:boolean,x:int,y:int,z:int,square:IsoGridSquare):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnDoTileBuilding2
+    Add = function(callback) end,
+    ---@param callback Callback_OnDoTileBuilding2
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnDoTileBuilding3 fun(cursor:ISMoveableCursor,bRender:boolean,x:int,y:int,z:int,square:IsoGridSquare):any
+
 ---(Client) Fires when a controller player builds something.
 Events.OnDoTileBuilding3 = {
-    ---@param func fun(cursor:ISMoveableCursor,bRender:boolean,x:int,y:int,z:int,square:IsoGridSquare):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnDoTileBuilding3
+    Add = function(callback) end,
+    ---@param callback Callback_OnDoTileBuilding3
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnDynamicMovableRecipe fun(sprite:String,recipe:MoveableRecipe,item:Moveable,character:IsoGameCharacter):any
+
 ---(Client) Fires when a local character crafts a dynamically generated Moveable scrapping recipe.
 Events.OnDynamicMovableRecipe = {
-    ---@param func fun(sprite:String,recipe:MoveableRecipe,item:Moveable,character:IsoGameCharacter):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnDynamicMovableRecipe
+    Add = function(callback) end,
+    ---@param callback Callback_OnDynamicMovableRecipe
+    Remove = function(callback) end,
 }
+
+---@alias Callback_onEnableSearchMode fun(character:IsoPlayer,isSearchMode:boolean):any
+
 ---(Client) Fires when a local player enables search mode.
 Events.onEnableSearchMode = {
-    ---@param func fun(character:IsoPlayer,isSearchMode:boolean):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_onEnableSearchMode
+    Add = function(callback) end,
+    ---@param callback Callback_onEnableSearchMode
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnEnterVehicle fun(character:IsoGameCharacter):any
+
 ---(Client) Fires when a character enters a vehicle.
 Events.OnEnterVehicle = {
-    ---@param func fun(character:IsoGameCharacter):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnEnterVehicle
+    Add = function(callback) end,
+    ---@param callback Callback_OnEnterVehicle
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnEquipPrimary fun(character:IsoGameCharacter,item:InventoryItem):any
+
 ---Fires when a character equips a new item in their primary slot.
 Events.OnEquipPrimary = {
-    ---@param func fun(character:IsoGameCharacter,item:InventoryItem):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnEquipPrimary
+    Add = function(callback) end,
+    ---@param callback Callback_OnEquipPrimary
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnEquipSecondary fun(character:IsoGameCharacter,item:InventoryItem):any
+
 ---Fires when a character equips a new item in their secondary slot.
 Events.OnEquipSecondary = {
-    ---@param func fun(character:IsoGameCharacter,item:InventoryItem):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnEquipSecondary
+    Add = function(callback) end,
+    ---@param callback Callback_OnEquipSecondary
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnExitVehicle fun(character:IsoGameCharacter):any
+
 ---(Client) Fires when a character exits a vehicle.
 Events.OnExitVehicle = {
-    ---@param func fun(character:IsoGameCharacter):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnExitVehicle
+    Add = function(callback) end,
+    ---@param callback Callback_OnExitVehicle
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnFETick function
+
 ---(Client) Fires every tick while on the main menu.
 Events.OnFETick = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnFETick
+    Add = function(callback) end,
+    ---@param callback Callback_OnFETick
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnFillContainer fun(roomType:String,containerType:String,container:ItemContainer):any
+
 ---(Server) Fires whenever a container is first filled with loot, or when loot respawns. Never fires for corpses. For vehicle containers, the roomType is instead the vehicle type.
 Events.OnFillContainer = {
-    ---@param func fun(roomType:String,containerType:String,container:ItemContainer):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnFillContainer
+    Add = function(callback) end,
+    ---@param callback Callback_OnFillContainer
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnFillInventoryObjectContextMenu fun(playerIndex:int,context:ISContextMenu,items:table):any
+
 ---(Client) Fires after the context menu for an inventory item is created.
 Events.OnFillInventoryObjectContextMenu = {
-    ---@param func fun(playerIndex:int,context:ISContextMenu,items:table):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnFillInventoryObjectContextMenu
+    Add = function(callback) end,
+    ---@param callback Callback_OnFillInventoryObjectContextMenu
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnFillInventoryContextMenuNoItems fun(playerIndex:int,context:ISContextMenu,isLoot:boolean):any
+
 ---(Client) Fires after the context menu for an empty inventory is created.
 Events.OnFillInventoryContextMenuNoItems = {
-    ---@param func fun(playerIndex:int,context:ISContextMenu,isLoot:boolean):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnFillInventoryContextMenuNoItems
+    Add = function(callback) end,
+    ---@param callback Callback_OnFillInventoryContextMenuNoItems
+    Remove = function(callback) end,
 }
+
+---@alias Callback_onFillSearchIconContextMenu fun(context:ISContextMenu,icon:ISBaseIcon):any
+
 ---(Client) Fires when opening the context menu for a foraging item.
 Events.onFillSearchIconContextMenu = {
-    ---@param func fun(context:ISContextMenu,icon:ISBaseIcon):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_onFillSearchIconContextMenu
+    Add = function(callback) end,
+    ---@param callback Callback_onFillSearchIconContextMenu
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnFillWorldObjectContextMenu fun(playerIndex:int,context:ISContextMenu,worldobjects:table,test:boolean):any
+
 ---(Client) Fires after the context menu for a world object is created.
 Events.OnFillWorldObjectContextMenu = {
-    ---@param func fun(playerIndex:int,context:ISContextMenu,worldobjects:table,test:boolean):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnFillWorldObjectContextMenu
+    Add = function(callback) end,
+    ---@param callback Callback_OnFillWorldObjectContextMenu
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnGameBoot function
+
 ---Fires after the game finishes starting up. Note: For clients, lua files in lua/server/ will not have loaded by the time this event is fired. This does not apply to servers.
 Events.OnGameBoot = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnGameBoot
+    Add = function(callback) end,
+    ---@param callback Callback_OnGameBoot
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnGameStart function
+
 ---(Client) Fires upon finishing loading and entering the game.
 Events.OnGameStart = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnGameStart
+    Add = function(callback) end,
+    ---@param callback Callback_OnGameStart
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnGameStateEnter fun(state:State):any
+
 ---(Client) Fires upon entering the Terms Of Service game state.
 Events.OnGameStateEnter = {
-    ---@param func fun(state:State):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnGameStateEnter
+    Add = function(callback) end,
+    ---@param callback Callback_OnGameStateEnter
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnGameTimeLoaded function
+
 ---Fires after GameTime is initialised.
 Events.OnGameTimeLoaded = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnGameTimeLoaded
+    Add = function(callback) end,
+    ---@param callback Callback_OnGameTimeLoaded
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnGamepadConnect fun(controllerId:int):any
+
 ---(Client) Fires after a controller is connected.
 Events.OnGamepadConnect = {
-    ---@param func fun(controllerId:int):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnGamepadConnect
+    Add = function(callback) end,
+    ---@param callback Callback_OnGamepadConnect
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnGamepadDisconnect fun(controllerId:int):any
+
 ---(Client) Fires after a controller is disconnected.
 Events.OnGamepadDisconnect = {
-    ---@param func fun(controllerId:int):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnGamepadDisconnect
+    Add = function(callback) end,
+    ---@param callback Callback_OnGamepadDisconnect
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnGetDBSchema fun(schema:table):any
+
 ---(Multiplayer) (Client) Fires when receiving the database schema from the server.
 Events.OnGetDBSchema = {
-    ---@param func fun(schema:table):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnGetDBSchema
+    Add = function(callback) end,
+    ---@param callback Callback_OnGetDBSchema
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnGetTableResult fun(data:ArrayList,rowId:int,tableName:String):any
+
 ---(Multiplayer) (Client) Fires when receiving a database table query result from the server.
 Events.OnGetTableResult = {
-    ---@param func fun(data:ArrayList,rowId:int,tableName:String):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnGetTableResult
+    Add = function(callback) end,
+    ---@param callback Callback_OnGetTableResult
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnGridBurnt fun(square:IsoGridSquare):any
+
 ---Fires when a square is burned by fire.
 Events.OnGridBurnt = {
-    ---@param func fun(square:IsoGridSquare):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnGridBurnt
+    Add = function(callback) end,
+    ---@param callback Callback_OnGridBurnt
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnHitZombie fun(zombie:IsoZombie,attacker:IsoGameCharacter,bodyPart:BodyPartType,weapon:HandWeapon):any
+
 ---Fires whenever a zombie is hit by a character.
 Events.OnHitZombie = {
-    ---@param func fun(zombie:IsoZombie,attacker:IsoGameCharacter,bodyPart:BodyPartType,weapon:HandWeapon):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnHitZombie
+    Add = function(callback) end,
+    ---@param callback Callback_OnHitZombie
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnInitGlobalModData fun(newGame:boolean):any
+
 ---Fires when GlobalModData is initialised. This is the earliest event after Sandbox Options are loaded.
 Events.OnInitGlobalModData = {
-    ---@param func fun(newGame:boolean):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnInitGlobalModData
+    Add = function(callback) end,
+    ---@param callback Callback_OnInitGlobalModData
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnInitModdedWeatherStage fun(weatherPeriod:WeatherPeriod,weatherStage:WeatherStage,strength:float):any
+
 ---Fires when a modded weather period is created.
 Events.OnInitModdedWeatherStage = {
-    ---@param func fun(weatherPeriod:WeatherPeriod,weatherStage:WeatherStage,strength:float):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnInitModdedWeatherStage
+    Add = function(callback) end,
+    ---@param callback Callback_OnInitModdedWeatherStage
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnInitRecordedMedia fun(recordedMedia:RecordedMedia):any
+
 ---Fires when RecordedMedia is initialised.
 Events.OnInitRecordedMedia = {
-    ---@param func fun(recordedMedia:RecordedMedia):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnInitRecordedMedia
+    Add = function(callback) end,
+    ---@param callback Callback_OnInitRecordedMedia
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnInitSeasons fun(season:ErosionSeason):any
+
 ---Fires when the ErosionManager is created.
 Events.OnInitSeasons = {
-    ---@param func fun(season:ErosionSeason):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnInitSeasons
+    Add = function(callback) end,
+    ---@param callback Callback_OnInitSeasons
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnInitWorld function
+
 ---Fires after the world has initialised.
 Events.OnInitWorld = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnInitWorld
+    Add = function(callback) end,
+    ---@param callback Callback_OnInitWorld
+    Remove = function(callback) end,
 }
+
+---@alias Callback_onItemFall function
+
 ---(Client) Fires when a local character is forced to drop the items in their hands.
 Events.onItemFall = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_onItemFall
+    Add = function(callback) end,
+    ---@param callback Callback_onItemFall
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnJoypadActivate fun(joypadId:int):any
+
 ---(Client) Fires whenever a controller starts being used during gameplay.
 Events.OnJoypadActivate = {
-    ---@param func fun(joypadId:int):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnJoypadActivate
+    Add = function(callback) end,
+    ---@param callback Callback_OnJoypadActivate
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnJoypadActivateUI fun(joypadId:int):any
+
 ---(Client) Fires whenever a controller starts being used outside of gameplay, such as on the main menu.
 Events.OnJoypadActivateUI = {
-    ---@param func fun(joypadId:int):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnJoypadActivateUI
+    Add = function(callback) end,
+    ---@param callback Callback_OnJoypadActivateUI
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnJoypadBeforeDeactivate fun(joypadId:double):any
+
 ---(Client) Fires when a controller is disconnected, before disconnection is processed.
 Events.OnJoypadBeforeDeactivate = {
-    ---@param func fun(joypadId:double):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnJoypadBeforeDeactivate
+    Add = function(callback) end,
+    ---@param callback Callback_OnJoypadBeforeDeactivate
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnJoypadBeforeReactivate fun(joypadId:double):any
+
 ---(Client) Fires when a controller is connected, before connection is processed.
 Events.OnJoypadBeforeReactivate = {
-    ---@param func fun(joypadId:double):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnJoypadBeforeReactivate
+    Add = function(callback) end,
+    ---@param callback Callback_OnJoypadBeforeReactivate
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnJoypadDeactivate fun(joypadId:double):any
+
 ---(Client) Fires after a controller has been disconnected.
 Events.OnJoypadDeactivate = {
-    ---@param func fun(joypadId:double):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnJoypadDeactivate
+    Add = function(callback) end,
+    ---@param callback Callback_OnJoypadDeactivate
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnJoypadReactivate fun(joypadId:double):any
+
 ---(Client) Fires after a controller has been connected.
 Events.OnJoypadReactivate = {
-    ---@param func fun(joypadId:double):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnJoypadReactivate
+    Add = function(callback) end,
+    ---@param callback Callback_OnJoypadReactivate
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnJoypadRenderUI function
+
 ---(Client) Fires when rendering controller debug UI.
 Events.OnJoypadRenderUI = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnJoypadRenderUI
+    Add = function(callback) end,
+    ---@param callback Callback_OnJoypadRenderUI
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnKeyKeepPressed fun(key:int):any
+
 ---(Client) Fires every frame while a key is held down.
 Events.OnKeyKeepPressed = {
-    ---@param func fun(key:int):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnKeyKeepPressed
+    Add = function(callback) end,
+    ---@param callback Callback_OnKeyKeepPressed
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnKeyPressed fun(key:int):any
+
 ---(Client) Fires when a key is released.
 Events.OnKeyPressed = {
-    ---@param func fun(key:int):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnKeyPressed
+    Add = function(callback) end,
+    ---@param callback Callback_OnKeyPressed
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnKeyStartPressed fun(key:int):any
+
 ---(Client) Fires when a key starts being pressed.
 Events.OnKeyStartPressed = {
-    ---@param func fun(key:int):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnKeyStartPressed
+    Add = function(callback) end,
+    ---@param callback Callback_OnKeyStartPressed
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnLoad function
+
 ---(Client) Fires upon finishing loading and entering the game.
 Events.OnLoad = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnLoad
+    Add = function(callback) end,
+    ---@param callback Callback_OnLoad
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnLoadedMapZones function
+
 ---Fires after loading the map zones.
 Events.OnLoadedMapZones = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnLoadedMapZones
+    Add = function(callback) end,
+    ---@param callback Callback_OnLoadedMapZones
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnLoadedTileDefinitions fun(spriteManager:IsoSpriteManager):any
+
 ---Fires after loading the tile definitions.
 Events.OnLoadedTileDefinitions = {
-    ---@param func fun(spriteManager:IsoSpriteManager):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnLoadedTileDefinitions
+    Add = function(callback) end,
+    ---@param callback Callback_OnLoadedTileDefinitions
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnLoadMapZones function
+
 ---Fires before loading the map zones.
 Events.OnLoadMapZones = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnLoadMapZones
+    Add = function(callback) end,
+    ---@param callback Callback_OnLoadMapZones
+    Remove = function(callback) end,
 }
+
+---@alias Callback_onLoadModDataFromServer fun(square:IsoGridSquare):any
+
 ---(Multiplayer) Fires when the server sends a square's moddata to the clients, or when the client receives it.
 Events.onLoadModDataFromServer = {
-    ---@param func fun(square:IsoGridSquare):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_onLoadModDataFromServer
+    Add = function(callback) end,
+    ---@param callback Callback_onLoadModDataFromServer
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnLoadRadioScripts fun(scriptManager:RadioScriptManager,newGame:boolean):any
+
 ---Fires after ZomboidRadio loads the radio scripts.
 Events.OnLoadRadioScripts = {
-    ---@param func fun(scriptManager:RadioScriptManager,newGame:boolean):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnLoadRadioScripts
+    Add = function(callback) end,
+    ---@param callback Callback_OnLoadRadioScripts
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnLoadSoundBanks function
+
 ---(Client) Fires after the game loads the FMOD sound banks.
 Events.OnLoadSoundBanks = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnLoadSoundBanks
+    Add = function(callback) end,
+    ---@param callback Callback_OnLoadSoundBanks
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnMainMenuEnter function
+
 ---(Client) Fires upon entering the main menu.
 Events.OnMainMenuEnter = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnMainMenuEnter
+    Add = function(callback) end,
+    ---@param callback Callback_OnMainMenuEnter
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnMechanicActionDone fun(character:IsoGameCharacter,success:boolean,vehicleId:int,partId:String,itemId:long,installing:boolean):any
+
 ---Fires after a character completes a mechanic action on a vehicle.
 Events.OnMechanicActionDone = {
-    ---@param func fun(character:IsoGameCharacter,success:boolean,vehicleId:int,partId:String,itemId:long,installing:boolean):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnMechanicActionDone
+    Add = function(callback) end,
+    ---@param callback Callback_OnMechanicActionDone
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnMiniScoreboardUpdate function
+
 ---(Multiplayer) (Client) Fires when the admin mini-scoreboard is updated.
 Events.OnMiniScoreboardUpdate = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnMiniScoreboardUpdate
+    Add = function(callback) end,
+    ---@param callback Callback_OnMiniScoreboardUpdate
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnModsModified function
+
 ---(Client) Fires on the main menu when a mod's files have changed.
 Events.OnModsModified = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnModsModified
+    Add = function(callback) end,
+    ---@param callback Callback_OnModsModified
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnMouseDown fun(x:double,y:double):any
+
 ---(Client) Fires when the player left clicks, as long as the input isn't eaten by UI.
 Events.OnMouseDown = {
-    ---@param func fun(x:double,y:double):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnMouseDown
+    Add = function(callback) end,
+    ---@param callback Callback_OnMouseDown
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnMouseMove fun(x:int,y:int,xMultiplied:int,yMultiplied:int):any
+
 ---(Client) Fires every frame, unless mouse movement is eaten by something else. The latter two values are the first two multiplied by the mouse player's zoom level.
 Events.OnMouseMove = {
-    ---@param func fun(x:int,y:int,xMultiplied:int,yMultiplied:int):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnMouseMove
+    Add = function(callback) end,
+    ---@param callback Callback_OnMouseMove
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnMouseUp fun(x:double,y:double):any
+
 ---(Client) Fires whenever the player releases the left mouse button, unless the input is eaten by UI.
 Events.OnMouseUp = {
-    ---@param func fun(x:double,y:double):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnMouseUp
+    Add = function(callback) end,
+    ---@param callback Callback_OnMouseUp
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnMultiTriggerNPCEvent fun(type:String,data:table,def:BuildingDef):any
+
 ---Fires when the player triggers an NPC event.
 Events.OnMultiTriggerNPCEvent = {
-    ---@param func fun(type:String,data:table,def:BuildingDef):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnMultiTriggerNPCEvent
+    Add = function(callback) end,
+    ---@param callback Callback_OnMultiTriggerNPCEvent
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnNewFire fun(fire:IsoFire):any
+
 ---Fires when a new fire is started.
 Events.OnNewFire = {
-    ---@param func fun(fire:IsoFire):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnNewFire
+    Add = function(callback) end,
+    ---@param callback Callback_OnNewFire
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnNewGame fun(player:IsoPlayer,square:IsoGridSquare):any
+
 ---(Client) Fires whenever a local player character is created for the first time.
 Events.OnNewGame = {
-    ---@param func fun(player:IsoPlayer,square:IsoGridSquare):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnNewGame
+    Add = function(callback) end,
+    ---@param callback Callback_OnNewGame
+    Remove = function(callback) end,
 }
----Fires before a tile object is removed from the world, either because it has been destroyed or because it has been unloaded.
+
+---@alias Callback_OnObjectAboutToBeRemoved fun(object:IsoObject):any
+
+---Fires before a tile object is destroyed or picked up.
 Events.OnObjectAboutToBeRemoved = {
-    ---@param func fun(object:IsoObject):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnObjectAboutToBeRemoved
+    Add = function(callback) end,
+    ---@param callback Callback_OnObjectAboutToBeRemoved
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnObjectAdded fun(object:IsoObject):any
+
 ---Fires when an object is added to the world. Note: usually not called on the client, but is in some cases.
 Events.OnObjectAdded = {
-    ---@param func fun(object:IsoObject):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnObjectAdded
+    Add = function(callback) end,
+    ---@param callback Callback_OnObjectAdded
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnObjectCollide fun(object:IsoMovingObject,collided:IsoObject):any
+
 ---Fires when two objects collide with each other.
 Events.OnObjectCollide = {
-    ---@param func fun(object:IsoMovingObject,collided:IsoObject):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnObjectCollide
+    Add = function(callback) end,
+    ---@param callback Callback_OnObjectCollide
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnObjectLeftMouseButtonDown fun(object:IsoObject,x:double,y:double):any
+
 ---(Client) Fires when the player left clicks a world object.
 Events.OnObjectLeftMouseButtonDown = {
-    ---@param func fun(object:IsoObject,x:double,y:double):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnObjectLeftMouseButtonDown
+    Add = function(callback) end,
+    ---@param callback Callback_OnObjectLeftMouseButtonDown
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnObjectLeftMouseButtonUp fun(object:IsoObject,x:double,y:double):any
+
 ---(Client) Fires when the player releases left click on a world object.
 Events.OnObjectLeftMouseButtonUp = {
-    ---@param func fun(object:IsoObject,x:double,y:double):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnObjectLeftMouseButtonUp
+    Add = function(callback) end,
+    ---@param callback Callback_OnObjectLeftMouseButtonUp
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnObjectRightMouseButtonDown fun(object:IsoObject,x:double,y:double):any
+
 ---(Client) Fires when the player right clicks a world object.
 Events.OnObjectRightMouseButtonDown = {
-    ---@param func fun(object:IsoObject,x:double,y:double):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnObjectRightMouseButtonDown
+    Add = function(callback) end,
+    ---@param callback Callback_OnObjectRightMouseButtonDown
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnObjectRightMouseButtonUp fun(object:IsoObject,x:double,y:double):any
+
 ---(Client) Fires when the player releases right click on a world object.
 Events.OnObjectRightMouseButtonUp = {
-    ---@param func fun(object:IsoObject,x:double,y:double):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnObjectRightMouseButtonUp
+    Add = function(callback) end,
+    ---@param callback Callback_OnObjectRightMouseButtonUp
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnPlayerAttackFinished fun(player:IsoPlayer,weapon:HandWeapon):any
+
 ---(Client) Fires when a local player finishes attacking.
 Events.OnPlayerAttackFinished = {
-    ---@param func fun(player:IsoPlayer,weapon:HandWeapon):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnPlayerAttackFinished
+    Add = function(callback) end,
+    ---@param callback Callback_OnPlayerAttackFinished
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnPlayerDeath fun(player:IsoPlayer):any
+
 ---(Client) Fires when a local player dies.
 Events.OnPlayerDeath = {
-    ---@param func fun(player:IsoPlayer):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnPlayerDeath
+    Add = function(callback) end,
+    ---@param callback Callback_OnPlayerDeath
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnPlayerGetDamage fun(character:IsoGameCharacter,damageType:String,damage:float):any
+
 ---Fires every time a local player takes damage. Bleeding bodyparts fire the event once per frame each. Possible damageTypes are: POISON, HUNGRY, SICK, BLEEDING, THIRST, HEAVYLOAD, INFECTION, LOWWEIGHT, FALLDOWN, FIRE, WEAPONHIT, CARHITDAMAGE, CARCRASHDAMAGE It also fires when zombies are hit by weapons: this is the only case in which the event fires on the server.
 Events.OnPlayerGetDamage = {
-    ---@param func fun(character:IsoGameCharacter,damageType:String,damage:float):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnPlayerGetDamage
+    Add = function(callback) end,
+    ---@param callback Callback_OnPlayerGetDamage
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnPlayerMove fun(character:IsoPlayer):any
+
 ---(Client) Fires during each local player's update if they are walking.
 Events.OnPlayerMove = {
-    ---@param func fun(character:IsoPlayer):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnPlayerMove
+    Add = function(callback) end,
+    ---@param callback Callback_OnPlayerMove
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnPlayerUpdate fun(player:IsoPlayer):any
+
 ---(Client) Fires during each local player's update (every tick).
 Events.OnPlayerUpdate = {
-    ---@param func fun(player:IsoPlayer):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnPlayerUpdate
+    Add = function(callback) end,
+    ---@param callback Callback_OnPlayerUpdate
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnPostDistributionMerge function
+
 ---Fires after the distribution tables have been merged.
 Events.OnPostDistributionMerge = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnPostDistributionMerge
+    Add = function(callback) end,
+    ---@param callback Callback_OnPostDistributionMerge
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnPostFloorLayerDraw fun(z:int):any
+
 ---Fires after a floor layer has been rendered.
 Events.OnPostFloorLayerDraw = {
-    ---@param func fun(z:int):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnPostFloorLayerDraw
+    Add = function(callback) end,
+    ---@param callback Callback_OnPostFloorLayerDraw
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnPostMapLoad fun(cell:IsoCell,x:int,y:int):any
+
 ---Fires after the map has been loaded.
 Events.OnPostMapLoad = {
-    ---@param func fun(cell:IsoCell,x:int,y:int):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnPostMapLoad
+    Add = function(callback) end,
+    ---@param callback Callback_OnPostMapLoad
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnPostRender function
+
 ---(Client) Fires after every in-game rendering frame.
 Events.OnPostRender = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnPostRender
+    Add = function(callback) end,
+    ---@param callback Callback_OnPostRender
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnPostSave function
+
 ---Fires after saving and exiting the game.
 Events.OnPostSave = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnPostSave
+    Add = function(callback) end,
+    ---@param callback Callback_OnPostSave
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnPostUIDraw function
+
 ---(Client) Fires after every UI render frame
 Events.OnPostUIDraw = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnPostUIDraw
+    Add = function(callback) end,
+    ---@param callback Callback_OnPostUIDraw
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnPreDistributionMerge function
+
 ---Fires after the distribution tables have been merged.
 Events.OnPreDistributionMerge = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnPreDistributionMerge
+    Add = function(callback) end,
+    ---@param callback Callback_OnPreDistributionMerge
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnPreFillInventoryObjectContextMenu fun(playerIndex:int,context:ISContextMenu,items:table):any
+
 ---(Client) Fires while the context menu for an inventory item is being created, before vanilla options are added.
 Events.OnPreFillInventoryObjectContextMenu = {
-    ---@param func fun(playerIndex:int,context:ISContextMenu,items:table):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnPreFillInventoryObjectContextMenu
+    Add = function(callback) end,
+    ---@param callback Callback_OnPreFillInventoryObjectContextMenu
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnPreFillInventoryContextMenuNoItems fun(playerIndex:int,context:ISContextMenu,isLoot:boolean):any
+
 ---(Client) Fires while the context menu for an empty inventory is being created, before vanilla options are added.
 Events.OnPreFillInventoryContextMenuNoItems = {
-    ---@param func fun(playerIndex:int,context:ISContextMenu,isLoot:boolean):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnPreFillInventoryContextMenuNoItems
+    Add = function(callback) end,
+    ---@param callback Callback_OnPreFillInventoryContextMenuNoItems
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnPreFillWorldObjectContextMenu fun(playerIndex:int,context:ISContextMenu,worldobjects:table,test:boolean):any
+
 ---(Client) Fires while the context menu for a world object is being created, before vanilla options are added.
 Events.OnPreFillWorldObjectContextMenu = {
-    ---@param func fun(playerIndex:int,context:ISContextMenu,worldobjects:table,test:boolean):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnPreFillWorldObjectContextMenu
+    Add = function(callback) end,
+    ---@param callback Callback_OnPreFillWorldObjectContextMenu
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnPreMapLoad function
+
 ---Fires before the map starts loading.
 Events.OnPreMapLoad = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnPreMapLoad
+    Add = function(callback) end,
+    ---@param callback Callback_OnPreMapLoad
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnPressRackButton fun(player:IsoPlayer,weapon:HandWeapon):any
+
 ---(Client) Fires when a local player has a gun and presses the button to rack it.
 Events.OnPressRackButton = {
-    ---@param func fun(player:IsoPlayer,weapon:HandWeapon):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnPressRackButton
+    Add = function(callback) end,
+    ---@param callback Callback_OnPressRackButton
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnPressReloadButton fun(player:IsoPlayer,weapon:HandWeapon):any
+
 ---(Client) Fires when a local player has a gun and presses the button to reload it.
 Events.OnPressReloadButton = {
-    ---@param func fun(player:IsoPlayer,weapon:HandWeapon):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnPressReloadButton
+    Add = function(callback) end,
+    ---@param callback Callback_OnPressReloadButton
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnPressWalkTo fun(arg0:int,arg1:int,arg2:int):any
+
 ---(Client) Fires when the local player 1 presses their Walk To keybind. The values passed are always 0,0,0 
 Events.OnPressWalkTo = {
-    ---@param func fun(arg0:int,arg1:int,arg2:int):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnPressWalkTo
+    Add = function(callback) end,
+    ---@param callback Callback_OnPressWalkTo
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnPreUIDraw function
+
 ---(Client) Fires before every UI render frame
 Events.OnPreUIDraw = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnPreUIDraw
+    Add = function(callback) end,
+    ---@param callback Callback_OnPreUIDraw
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnReceiveGlobalModData fun(tableName:String,data:table):any
+
 ---(Multiplayer) Fires when receiving a global moddata table. The table argument is false if the table did not exist.
 Events.OnReceiveGlobalModData = {
-    ---@param func fun(tableName:String,data:table):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnReceiveGlobalModData
+    Add = function(callback) end,
+    ---@param callback Callback_OnReceiveGlobalModData
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnReceiveItemListNet fun(sender:IsoPlayer,items:ArrayList,receiver:IsoPlayer,transferID:String,custom:String):any
+
 ---(Multiplayer) Fires when receiving a list of items from another player.
 Events.OnReceiveItemListNet = {
-    ---@param func fun(sender:IsoPlayer,items:ArrayList,receiver:IsoPlayer,transferID:String,custom:String):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnReceiveItemListNet
+    Add = function(callback) end,
+    ---@param callback Callback_OnReceiveItemListNet
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnReceiveUserlog fun(username:String,logs:ArrayList):any
+
 ---(Multiplayer) (Client) Fires when receiving another client's Userlogs.
 Events.OnReceiveUserlog = {
-    ---@param func fun(username:String,logs:ArrayList):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnReceiveUserlog
+    Add = function(callback) end,
+    ---@param callback Callback_OnReceiveUserlog
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnRefreshInventoryWindowContainers fun(inventoryPage:ISInventoryPage,reason:String):any
+
 ---(Client) Fires when the available containers in the inventory UI change.
 Events.OnRefreshInventoryWindowContainers = {
-    ---@param func fun(inventoryPage:ISInventoryPage,reason:String):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnRefreshInventoryWindowContainers
+    Add = function(callback) end,
+    ---@param callback Callback_OnRefreshInventoryWindowContainers
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnRenderTick function
+
 ---Fires on every rendering tick.
 Events.OnRenderTick = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnRenderTick
+    Add = function(callback) end,
+    ---@param callback Callback_OnRenderTick
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnResetLua fun(reason:String):any
+
 ---Fires after Lua has been reloaded.
 Events.OnResetLua = {
-    ---@param func fun(reason:String):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnResetLua
+    Add = function(callback) end,
+    ---@param callback Callback_OnResetLua
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnResolutionChange fun(oldX:int,oldY:int,newX:int,newY:int):any
+
 ---Fires whenever the window resolution changes.
 Events.OnResolutionChange = {
-    ---@param func fun(oldX:int,oldY:int,newX:int,newY:int):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnResolutionChange
+    Add = function(callback) end,
+    ---@param callback Callback_OnResolutionChange
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnRightMouseDown fun(x:double,y:double):any
+
 ---(Client) Fires when the player right clicks, as long as the input isn't eaten by UI.
 Events.OnRightMouseDown = {
-    ---@param func fun(x:double,y:double):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnRightMouseDown
+    Add = function(callback) end,
+    ---@param callback Callback_OnRightMouseDown
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnRightMouseUp fun(x:double,y:double):any
+
 ---(Client) Fires whenever the player releases the right mouse button, unless the input is eaten by UI.
 Events.OnRightMouseUp = {
-    ---@param func fun(x:double,y:double):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnRightMouseUp
+    Add = function(callback) end,
+    ---@param callback Callback_OnRightMouseUp
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnSafehousesChanged function
+
 ---(Multiplayer) (Client) Fires every time a safehouse is added, removed or changed.
 Events.OnSafehousesChanged = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnSafehousesChanged
+    Add = function(callback) end,
+    ---@param callback Callback_OnSafehousesChanged
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnSave function
+
 ---Fires while saving the world, after characters and sandbox options have been saved, but before global mod data and the world have been saved.
 Events.OnSave = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnSave
+    Add = function(callback) end,
+    ---@param callback Callback_OnSave
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnScoreboardUpdate fun(usernames:ArrayList,displayNames:ArrayList,steamIDs:ArrayList):any
+
 ---(Multiplayer) (Client) Fires when the client receives an update to the in-game scoreboard.
 Events.OnScoreboardUpdate = {
-    ---@param func fun(usernames:ArrayList,displayNames:ArrayList,steamIDs:ArrayList):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnScoreboardUpdate
+    Add = function(callback) end,
+    ---@param callback Callback_OnScoreboardUpdate
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnSeeNewRoom fun(room:IsoRoom):any
+
 ---Fires when a room becomes visible for the first time.
 Events.OnSeeNewRoom = {
-    ---@param func fun(room:IsoRoom):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnSeeNewRoom
+    Add = function(callback) end,
+    ---@param callback Callback_OnSeeNewRoom
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnServerCommand fun(module:String,command:String,args:table):any
+
 ---(Multiplayer) (Client) Fires when a server command sent through sendServerCommand is received by the client.
 Events.OnServerCommand = {
-    ---@param func fun(module:String,command:String,args:table):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnServerCommand
+    Add = function(callback) end,
+    ---@param callback Callback_OnServerCommand
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnServerFinishSaving function
+
 ---(Multiplayer) (Client) Fires when the server has finished saving and unpauses the game.
 Events.OnServerFinishSaving = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnServerFinishSaving
+    Add = function(callback) end,
+    ---@param callback Callback_OnServerFinishSaving
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnServerStarted function
+
 ---(Multiplayer) (Server) Fires when the server has started and can now be connected to.
 Events.OnServerStarted = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnServerStarted
+    Add = function(callback) end,
+    ---@param callback Callback_OnServerStarted
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnServerStartSaving function
+
 ---(Multiplayer) (Server) Fires when the server has paused the game to save.
 Events.OnServerStartSaving = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnServerStartSaving
+    Add = function(callback) end,
+    ---@param callback Callback_OnServerStartSaving
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnServerStatisticReceived function
+
 ---(Multiplayer) (Client) Fires when the MPStatistics have been received from the server.
 Events.OnServerStatisticReceived = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnServerStatisticReceived
+    Add = function(callback) end,
+    ---@param callback Callback_OnServerStatisticReceived
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnServerWorkshopItems fun(type:String):any
+
 ---(Multiplayer) (Client) Fires when receiving an update about the server's Steam Workshop items while connecting.
 Events.OnServerWorkshopItems = {
-    ---@param func fun(type:String):any
-    ---@overload fun(func:fun(type:String,requiredItems:ArrayList):any)
-    ---@overload fun(func:fun(type:String,message:String):any)
-    ---@overload fun(func:fun(type:String,ID:long,Error:String):any)
-    ---@overload fun(func:fun(type:String,steamID:String,bytesDownloaded:long,bytesRemaining:long):any)
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnServerWorkshopItems
+    Add = function(callback) end,
+    ---@param callback Callback_OnServerWorkshopItems
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnSetDefaultTab fun(title:String):any
+
 ---(Multiplayer) (Client) Fires when the player sets their favourite chat window tab.
 Events.OnSetDefaultTab = {
-    ---@param func fun(title:String):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnSetDefaultTab
+    Add = function(callback) end,
+    ---@param callback Callback_OnSetDefaultTab
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnSGlobalObjectSystemInit function
+
 ---(Server) Fires when the server GlobalObject system has been initialised.
 Events.OnSGlobalObjectSystemInit = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnSGlobalObjectSystemInit
+    Add = function(callback) end,
+    ---@param callback Callback_OnSGlobalObjectSystemInit
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnSpawnRegionsLoaded fun(regions:table):any
+
 ---(Client) Fires when the spawn regions have been loaded.
 Events.OnSpawnRegionsLoaded = {
-    ---@param func fun(regions:table):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnSpawnRegionsLoaded
+    Add = function(callback) end,
+    ---@param callback Callback_OnSpawnRegionsLoaded
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnSteamFriendStatusChanged fun(steamID:String):any
+
 ---(Client) Fires when the player has gained or lost a steam friend.
 Events.OnSteamFriendStatusChanged = {
-    ---@param func fun(steamID:String):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnSteamFriendStatusChanged
+    Add = function(callback) end,
+    ---@param callback Callback_OnSteamFriendStatusChanged
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnSteamGameJoin function
+
 ---(Multiplayer) (Client) Fires when the player joins a game through steam.
 Events.OnSteamGameJoin = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnSteamGameJoin
+    Add = function(callback) end,
+    ---@param callback Callback_OnSteamGameJoin
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnSteamRefreshInternetServers function
+
 ---(Client) Fires when the steam server list has been refreshed.
 Events.OnSteamRefreshInternetServers = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnSteamRefreshInternetServers
+    Add = function(callback) end,
+    ---@param callback Callback_OnSteamRefreshInternetServers
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnSteamRulesRefreshComplete fun(address:String,port:int,rules:table):any
+
 ---(Client) Fires after a server's rules are retrieved. 'rules' is a table of information about the server.
 Events.OnSteamRulesRefreshComplete = {
-    ---@param func fun(address:String,port:int,rules:table):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnSteamRulesRefreshComplete
+    Add = function(callback) end,
+    ---@param callback Callback_OnSteamRulesRefreshComplete
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnSteamServerResponded fun(index:int):any
+
 ---(Client) Fires when receiving a server for the server list.
 Events.OnSteamServerResponded = {
-    ---@param func fun(index:int):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnSteamServerResponded
+    Add = function(callback) end,
+    ---@param callback Callback_OnSteamServerResponded
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnSteamServerResponded2 fun(address:String,port:int,server:Server):any
+
 ---(Client) Fires when receiving a server for the favourited server list.
 Events.OnSteamServerResponded2 = {
-    ---@param func fun(address:String,port:int,server:Server):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnSteamServerResponded2
+    Add = function(callback) end,
+    ---@param callback Callback_OnSteamServerResponded2
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnSteamWorkshopItemCreated fun(workshopId:String,bUserNeedsToAcceptWorkshopLegalAgreement:boolean):any
+
 ---(Client) Fires when the client successfully uploads a workshop item.
 Events.OnSteamWorkshopItemCreated = {
-    ---@param func fun(workshopId:String,bUserNeedsToAcceptWorkshopLegalAgreement:boolean):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnSteamWorkshopItemCreated
+    Add = function(callback) end,
+    ---@param callback Callback_OnSteamWorkshopItemCreated
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnSteamWorkshopItemNotCreated fun(result:int):any
+
 ---(Client) Fires when the client fails to upload a workshop item.
 Events.OnSteamWorkshopItemNotCreated = {
-    ---@param func fun(result:int):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnSteamWorkshopItemNotCreated
+    Add = function(callback) end,
+    ---@param callback Callback_OnSteamWorkshopItemNotCreated
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnSteamWorkshopItemNotUpdated fun(result:int):any
+
 ---(Client) Fires when the client fails to update a workshop item.
 Events.OnSteamWorkshopItemNotUpdated = {
-    ---@param func fun(result:int):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnSteamWorkshopItemNotUpdated
+    Add = function(callback) end,
+    ---@param callback Callback_OnSteamWorkshopItemNotUpdated
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnSteamWorkshopItemUpdated fun(bUserNeedsToAcceptWorkshopLegalAgreement:boolean):any
+
 ---(Client) Fires when the client successfully updates a workshop item.
 Events.OnSteamWorkshopItemUpdated = {
-    ---@param func fun(bUserNeedsToAcceptWorkshopLegalAgreement:boolean):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnSteamWorkshopItemUpdated
+    Add = function(callback) end,
+    ---@param callback Callback_OnSteamWorkshopItemUpdated
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnSwitchVehicleSeat fun(character:IsoGameCharacter):any
+
 ---(Client) Fires when a local character moves seats in a vehicle.
 Events.OnSwitchVehicleSeat = {
-    ---@param func fun(character:IsoGameCharacter):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnSwitchVehicleSeat
+    Add = function(callback) end,
+    ---@param callback Callback_OnSwitchVehicleSeat
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnTabAdded fun(title:String,tabID:short):any
+
 ---(Multiplayer) (Client) Fires when a tab is added to the chat.
 Events.OnTabAdded = {
-    ---@param func fun(title:String,tabID:short):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnTabAdded
+    Add = function(callback) end,
+    ---@param callback Callback_OnTabAdded
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnTabRemoved fun(title:String,tabID:short):any
+
 ---(Multiplayer) (Client) Fires when a tab is removed from the chat.
 Events.OnTabRemoved = {
-    ---@param func fun(title:String,tabID:short):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnTabRemoved
+    Add = function(callback) end,
+    ---@param callback Callback_OnTabRemoved
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnTemplateTextInit function
+
 ---Fires when TemplateText is initialised.
 Events.OnTemplateTextInit = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnTemplateTextInit
+    Add = function(callback) end,
+    ---@param callback Callback_OnTemplateTextInit
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnThrowableExplode fun(throwable:IsoTrap,square:IsoGridSquare):any
+
 ---Fires when a throwable or trap explodes.
 Events.OnThrowableExplode = {
-    ---@param func fun(throwable:IsoTrap,square:IsoGridSquare):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnThrowableExplode
+    Add = function(callback) end,
+    ---@param callback Callback_OnThrowableExplode
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnThunderEvent fun(x:int,y:int,strike:boolean,light:boolean,rumble:boolean):any
+
 ---(Client) Fires when thunder hits.
 Events.OnThunderEvent = {
-    ---@param func fun(x:int,y:int,strike:boolean,light:boolean,rumble:boolean):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnThunderEvent
+    Add = function(callback) end,
+    ---@param callback Callback_OnThunderEvent
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnTick fun(tick:double):any
+
 ---Fires every game tick.
 Events.OnTick = {
-    ---@param func fun(tick:double):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnTick
+    Add = function(callback) end,
+    ---@param callback Callback_OnTick
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnTickEvenPaused fun(tick:double):any
+
 ---Fires every game tick, even if the game is paused. Tick is 0 while paused.
 Events.OnTickEvenPaused = {
-    ---@param func fun(tick:double):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnTickEvenPaused
+    Add = function(callback) end,
+    ---@param callback Callback_OnTickEvenPaused
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnTileRemoved fun(object:IsoObject):any
+
 ---Fires when a tile object is removed.
 Events.OnTileRemoved = {
-    ---@param func fun(object:IsoObject):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnTileRemoved
+    Add = function(callback) end,
+    ---@param callback Callback_OnTileRemoved
+    Remove = function(callback) end,
 }
+
+---@alias Callback_onToggleSearchMode fun(character:IsoPlayer,isSearchMode:boolean):any
+
 ---(Client) Fires when a local player toggles search mode.
 Events.onToggleSearchMode = {
-    ---@param func fun(character:IsoPlayer,isSearchMode:boolean):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_onToggleSearchMode
+    Add = function(callback) end,
+    ---@param callback Callback_onToggleSearchMode
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnTriggerNPCEvent fun(type:String,data:table,def:BuildingDef):any
+
 ---Fires when the player triggers an NPC event.
 Events.OnTriggerNPCEvent = {
-    ---@param func fun(type:String,data:table,def:BuildingDef):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnTriggerNPCEvent
+    Add = function(callback) end,
+    ---@param callback Callback_OnTriggerNPCEvent
+    Remove = function(callback) end,
 }
+
+---@alias Callback_onUpdateIcon fun(zoneData:table,iconID:string,icon:ISForageIcon):any
+
 ---(Client) Fires when an ISForageIcon is moved or removed.
 Events.onUpdateIcon = {
-    ---@param func fun(zoneData:table,iconID:string,icon:ISForageIcon):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_onUpdateIcon
+    Add = function(callback) end,
+    ---@param callback Callback_onUpdateIcon
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnUpdateModdedWeatherStage fun(weatherPeriod:WeatherPeriod,weatherStage:WeatherStage,strength:float):any
+
 ---(Server) Fires when a modded weather stage tries to be updated.
 Events.OnUpdateModdedWeatherStage = {
-    ---@param func fun(weatherPeriod:WeatherPeriod,weatherStage:WeatherStage,strength:float):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnUpdateModdedWeatherStage
+    Add = function(callback) end,
+    ---@param callback Callback_OnUpdateModdedWeatherStage
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnUseVehicle fun(character:IsoGameCharacter,vehicle:BaseVehicle,pressedNotTapped:boolean):any
+
 ---(Client) Fires when a local character enters or exits a vehicle.
 Events.OnUseVehicle = {
-    ---@param func fun(character:IsoGameCharacter,vehicle:BaseVehicle,pressedNotTapped:boolean):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnUseVehicle
+    Add = function(callback) end,
+    ---@param callback Callback_OnUseVehicle
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnVehicleDamageTexture fun(driver:IsoGameCharacter):any
+
 ---Fires when a vehicle part has become damaged enough to gain a damage overlay.
 Events.OnVehicleDamageTexture = {
-    ---@param func fun(driver:IsoGameCharacter):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnVehicleDamageTexture
+    Add = function(callback) end,
+    ---@param callback Callback_OnVehicleDamageTexture
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnWaterAmountChange fun(object:IsoObject,previousAmount:int):any
+
 ---Fires when the amount of water in an object changes.
 Events.OnWaterAmountChange = {
-    ---@param func fun(object:IsoObject,previousAmount:int):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnWaterAmountChange
+    Add = function(callback) end,
+    ---@param callback Callback_OnWaterAmountChange
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnWeaponHitCharacter fun(attacker:IsoGameCharacter,target:IsoGameCharacter,weapon:HandWeapon,damage:float):any
+
 ---(Client) Fires when a non-zombie character is hit by an attack.
 Events.OnWeaponHitCharacter = {
-    ---@param func fun(attacker:IsoGameCharacter,target:IsoGameCharacter,weapon:HandWeapon,damage:float):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnWeaponHitCharacter
+    Add = function(callback) end,
+    ---@param callback Callback_OnWeaponHitCharacter
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnWeaponHitThumpable fun(attacker:IsoGameCharacter,weapon:HandWeapon,object:IsoThumpable):any
+
 ---(Server) Fires when an IsoThumpable is hit by an attack.
 Events.OnWeaponHitThumpable = {
-    ---@param func fun(attacker:IsoGameCharacter,weapon:HandWeapon,object:IsoThumpable):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnWeaponHitThumpable
+    Add = function(callback) end,
+    ---@param callback Callback_OnWeaponHitThumpable
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnWeaponHitTree fun(attacker:IsoGameCharacter,weapon:HandWeapon):any
+
 ---(Client) Fires when a tree is hit by an attack.
 Events.OnWeaponHitTree = {
-    ---@param func fun(attacker:IsoGameCharacter,weapon:HandWeapon):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnWeaponHitTree
+    Add = function(callback) end,
+    ---@param callback Callback_OnWeaponHitTree
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnWeaponHitXp fun(attacker:IsoGameCharacter,weapon:HandWeapon,target:IsoMovingObject,damage:float):any
+
 ---Fires when XP is being granted for an attack.
 Events.OnWeaponHitXp = {
-    ---@param func fun(attacker:IsoGameCharacter,weapon:HandWeapon,target:IsoMovingObject,damage:float):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnWeaponHitXp
+    Add = function(callback) end,
+    ---@param callback Callback_OnWeaponHitXp
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnWeaponSwing fun(attacker:IsoPlayer,weapon:HandWeapon):any
+
 ---Fires when a player begins swinging a weapon.
 Events.OnWeaponSwing = {
-    ---@param func fun(attacker:IsoPlayer,weapon:HandWeapon):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnWeaponSwing
+    Add = function(callback) end,
+    ---@param callback Callback_OnWeaponSwing
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnWeaponSwingHitPoint fun(attacker:IsoPlayer,weapon:HandWeapon):any
+
 ---(Client) Fires when a local player's attack connects.
 Events.OnWeaponSwingHitPoint = {
-    ---@param func fun(attacker:IsoPlayer,weapon:HandWeapon):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnWeaponSwingHitPoint
+    Add = function(callback) end,
+    ---@param callback Callback_OnWeaponSwingHitPoint
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnWeatherPeriodComplete fun(period:WeatherPeriod):any
+
 ---(Server) Fires when a weather period finishes.
 Events.OnWeatherPeriodComplete = {
-    ---@param func fun(period:WeatherPeriod):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnWeatherPeriodComplete
+    Add = function(callback) end,
+    ---@param callback Callback_OnWeatherPeriodComplete
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnWeatherPeriodStage fun(period:WeatherPeriod):any
+
 ---(Server) Fires when a weather period progresses a stage.
 Events.OnWeatherPeriodStage = {
-    ---@param func fun(period:WeatherPeriod):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnWeatherPeriodStage
+    Add = function(callback) end,
+    ---@param callback Callback_OnWeatherPeriodStage
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnWeatherPeriodStart fun(period:WeatherPeriod):any
+
 ---(Server) Fires when a weather period begins.
 Events.OnWeatherPeriodStart = {
-    ---@param func fun(period:WeatherPeriod):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnWeatherPeriodStart
+    Add = function(callback) end,
+    ---@param callback Callback_OnWeatherPeriodStart
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnWeatherPeriodStop fun(period:WeatherPeriod):any
+
 ---(Server) Fires when a weather period ends early, such as by an admin command.
 Events.OnWeatherPeriodStop = {
-    ---@param func fun(period:WeatherPeriod):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnWeatherPeriodStop
+    Add = function(callback) end,
+    ---@param callback Callback_OnWeatherPeriodStop
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnWorldSound fun(x:int,y:int,z:int,radius:int,volume:int,source:Object):any
+
 ---Fires whenever a world sound is created.
 Events.OnWorldSound = {
-    ---@param func fun(x:int,y:int,z:int,radius:int,volume:int,source:Object):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnWorldSound
+    Add = function(callback) end,
+    ---@param callback Callback_OnWorldSound
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnZombieDead fun(zombie:IsoZombie):any
+
 ---Fires when a zombie dies. The zombie's inventory is not filled with loot when this event fires, but their clothing and attached items are added.
 Events.OnZombieDead = {
-    ---@param func fun(zombie:IsoZombie):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnZombieDead
+    Add = function(callback) end,
+    ---@param callback Callback_OnZombieDead
+    Remove = function(callback) end,
 }
+
+---@alias Callback_OnZombieUpdate fun(zombie:IsoZombie):any
+
 ---(Client) Fires whenever a zombie updates.
 Events.OnZombieUpdate = {
-    ---@param func fun(zombie:IsoZombie):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnZombieUpdate
+    Add = function(callback) end,
+    ---@param callback Callback_OnZombieUpdate
+    Remove = function(callback) end,
 }
+
+---@alias Callback_preAddCatDefs fun(system:forageSystem):any
+
 ---Fires before the foraging system processes item category definitions.
 Events.preAddCatDefs = {
-    ---@param func fun(system:forageSystem):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_preAddCatDefs
+    Add = function(callback) end,
+    ---@param callback Callback_preAddCatDefs
+    Remove = function(callback) end,
 }
+
+---@alias Callback_preAddForageDefs fun(system:forageSystem):any
+
 ---Fires before the foraging system processes any definitions.
 Events.preAddForageDefs = {
-    ---@param func fun(system:forageSystem):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_preAddForageDefs
+    Add = function(callback) end,
+    ---@param callback Callback_preAddForageDefs
+    Remove = function(callback) end,
 }
+
+---@alias Callback_preAddItemDefs fun(system:forageSystem):any
+
 ---Fires before the foraging system processes item definitions.
 Events.preAddItemDefs = {
-    ---@param func fun(system:forageSystem):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_preAddItemDefs
+    Add = function(callback) end,
+    ---@param callback Callback_preAddItemDefs
+    Remove = function(callback) end,
 }
+
+---@alias Callback_preAddSkillDefs fun(system:forageSystem):any
+
 ---Fires before the foraging system processes trait and profession definitions.
 Events.preAddSkillDefs = {
-    ---@param func fun(system:forageSystem):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_preAddSkillDefs
+    Add = function(callback) end,
+    ---@param callback Callback_preAddSkillDefs
+    Remove = function(callback) end,
 }
+
+---@alias Callback_preAddZoneDefs fun(system:forageSystem):any
+
 ---Fires before the foraging system processes zone definitions.
 Events.preAddZoneDefs = {
-    ---@param func fun(system:forageSystem):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_preAddZoneDefs
+    Add = function(callback) end,
+    ---@param callback Callback_preAddZoneDefs
+    Remove = function(callback) end,
 }
+
+---@alias Callback_ReceiveFactionInvite fun(factionName:String,hostUsername:String):any
+
 ---(Multiplayer) (Client) Fires when the client receives a faction invite.
 Events.ReceiveFactionInvite = {
-    ---@param func fun(factionName:String,hostUsername:String):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_ReceiveFactionInvite
+    Add = function(callback) end,
+    ---@param callback Callback_ReceiveFactionInvite
+    Remove = function(callback) end,
 }
+
+---@alias Callback_ReceiveSafehouseInvite fun(title:String,hostUsername:String):any
+
 ---(Multiplayer) (Client) Fires when the client receives a safehouse invite.
 Events.ReceiveSafehouseInvite = {
-    ---@param func fun(title:String,hostUsername:String):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_ReceiveSafehouseInvite
+    Add = function(callback) end,
+    ---@param callback Callback_ReceiveSafehouseInvite
+    Remove = function(callback) end,
 }
+
+---@alias Callback_RequestTrade fun(requester:String):any
+
 ---(Multiplayer) (Client) Fires when the client receives a trade request.
 Events.RequestTrade = {
-    ---@param func fun(requester:String):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_RequestTrade
+    Add = function(callback) end,
+    ---@param callback Callback_RequestTrade
+    Remove = function(callback) end,
 }
+
+---@alias Callback_ReuseGridsquare fun(square:IsoGridSquare):any
+
 ---Fires before a square is unloaded.
 Events.ReuseGridsquare = {
-    ---@param func fun(square:IsoGridSquare):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_ReuseGridsquare
+    Add = function(callback) end,
+    ---@param callback Callback_ReuseGridsquare
+    Remove = function(callback) end,
 }
+
+---@alias Callback_SendCustomModData function
+
 ---(Multiplayer) (Server) Fires when a client is requesting server moddata.
 Events.SendCustomModData = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_SendCustomModData
+    Add = function(callback) end,
+    ---@param callback Callback_SendCustomModData
+    Remove = function(callback) end,
 }
+
+---@alias Callback_ServerPinged fun(clientAddress:String,numClients:String):any
+
 ---(Multiplayer) (Client) Fires when receiving a ping response from the server. The 'numClients' string is suffixed with '/512'.
 Events.ServerPinged = {
-    ---@param func fun(clientAddress:String,numClients:String):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_ServerPinged
+    Add = function(callback) end,
+    ---@param callback Callback_ServerPinged
+    Remove = function(callback) end,
 }
+
+---@alias Callback_SwitchChatStream function
+
 ---(Multiplayer) (Client) Fires when the client switches chat tabs.
 Events.SwitchChatStream = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_SwitchChatStream
+    Add = function(callback) end,
+    ---@param callback Callback_SwitchChatStream
+    Remove = function(callback) end,
 }
+
+---@alias Callback_SyncFaction fun(faction:String):any
+
 ---(Multiplayer) (Client) Fires when the client receives changes to a faction.
 Events.SyncFaction = {
-    ---@param func fun(faction:String):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_SyncFaction
+    Add = function(callback) end,
+    ---@param callback Callback_SyncFaction
+    Remove = function(callback) end,
 }
+
+---@alias Callback_TradingUIAddItem fun(player:IsoPlayer,item:InventoryItem):any
+
 ---(Multiplayer) (Client) Fires when the other player in a trade adds an item.
 Events.TradingUIAddItem = {
-    ---@param func fun(player:IsoPlayer,item:InventoryItem):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_TradingUIAddItem
+    Add = function(callback) end,
+    ---@param callback Callback_TradingUIAddItem
+    Remove = function(callback) end,
 }
+
+---@alias Callback_TradingUIRemoveItem fun(player:IsoPlayer,index:int):any
+
 ---(Multiplayer) (Client) Fires when the other player in a trade removes an item.
 Events.TradingUIRemoveItem = {
-    ---@param func fun(player:IsoPlayer,index:int):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_TradingUIRemoveItem
+    Add = function(callback) end,
+    ---@param callback Callback_TradingUIRemoveItem
+    Remove = function(callback) end,
 }
+
+---@alias Callback_TradingUIUpdateState fun(player:IsoPlayer,state:int):any
+
 ---(Multiplayer) (Client) Fires when the other player in a trade changes the state of the trade.
 Events.TradingUIUpdateState = {
-    ---@param func fun(player:IsoPlayer,state:int):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_TradingUIUpdateState
+    Add = function(callback) end,
+    ---@param callback Callback_TradingUIUpdateState
+    Remove = function(callback) end,
 }
+
+---@alias Callback_ViewTickets fun(tickets:ArrayList):any
+
 ---(Multiplayer) (Client) Fires when receiving the list of tickets from the server.
 Events.ViewTickets = {
-    ---@param func fun(tickets:ArrayList):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_ViewTickets
+    Add = function(callback) end,
+    ---@param callback Callback_ViewTickets
+    Remove = function(callback) end,
 }
+
 Hook = {}
+
+---@alias Callback_Attack fun(attacker:IsoLivingCharacter,chargeDelta:float,weapon:HandWeapon):any
+
 ---(Client) Called every tick while a local character is pressing their attack button and is able to attack.
 Hook.Attack = {
-    ---@param func fun(attacker:IsoLivingCharacter,chargeDelta:float,weapon:HandWeapon):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_Attack
+    Add = function(callback) end,
+    ---@param callback Callback_Attack
+    Remove = function(callback) end,
 }
+
+---@alias Callback_AutoDrink fun(character:IsoGameCharacter):any
+
 ---(Client) Called whenever a character automatically drinks while auto-drink is turned on.
 Hook.AutoDrink = {
-    ---@param func fun(character:IsoGameCharacter):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_AutoDrink
+    Add = function(callback) end,
+    ---@param callback Callback_AutoDrink
+    Remove = function(callback) end,
 }
+
+---@alias Callback_CalculateStats fun(character:IsoGameCharacter):any
+
 ---(Client) Called when a character's stats are being updated. Character health is not included.
 Hook.CalculateStats = {
-    ---@param func fun(character:IsoGameCharacter):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_CalculateStats
+    Add = function(callback) end,
+    ---@param callback Callback_CalculateStats
+    Remove = function(callback) end,
 }
+
+---@alias Callback_WeaponHitCharacter fun(attacker:IsoGameCharacter,target:IsoGameCharacter,weapon:HandWeapon,damageSplit:float):any
+
 ---Called when the effects of an attack are being calculated.
 Hook.WeaponHitCharacter = {
-    ---@param func fun(attacker:IsoGameCharacter,target:IsoGameCharacter,weapon:HandWeapon,damageSplit:float):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_WeaponHitCharacter
+    Add = function(callback) end,
+    ---@param callback Callback_WeaponHitCharacter
+    Remove = function(callback) end,
 }
+
+---@alias Callback_WeaponSwing fun(character:IsoGameCharacter,weapon:HandWeapon):any
+
 ---Called when a weapon is swung to find targets
 Hook.WeaponSwing = {
-    ---@param func fun(character:IsoGameCharacter,weapon:HandWeapon):any
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_WeaponSwing
+    Add = function(callback) end,
+    ---@param callback Callback_WeaponSwing
+    Remove = function(callback) end,
 }
+

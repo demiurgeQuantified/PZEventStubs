@@ -3,277 +3,382 @@
 
 -- If it helped you, please consider leaving me a tip ^u^
 -- https://ko-fi.com/starseamstress
+
 Events = {}
+
 ---@deprecated
+---@alias Callback_OnAIStateEnter function
+
 ---(Deprecated) 
 Events.OnAIStateEnter = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnAIStateEnter
+    Add = function(callback) end,
+    ---@param callback Callback_OnAIStateEnter
+    Remove = function(callback) end,
 }
+
 ---@deprecated
+---@alias Callback_OnAIStateExecute function
+
 ---(Deprecated) 
 Events.OnAIStateExecute = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnAIStateExecute
+    Add = function(callback) end,
+    ---@param callback Callback_OnAIStateExecute
+    Remove = function(callback) end,
 }
+
 ---@deprecated
+---@alias Callback_OnAIStateExit function
+
 ---(Deprecated) 
 Events.OnAIStateExit = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnAIStateExit
+    Add = function(callback) end,
+    ---@param callback Callback_OnAIStateExit
+    Remove = function(callback) end,
 }
+
 ---@deprecated
+---@alias Callback_OnAddBuilding function
+
 ---(Deprecated) 
 Events.OnAddBuilding = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnAddBuilding
+    Add = function(callback) end,
+    ---@param callback Callback_OnAddBuilding
+    Remove = function(callback) end,
 }
+
 ---@deprecated
+---@alias Callback_OnBeingHitByZombie function
+
 ---(Deprecated) 
 Events.OnBeingHitByZombie = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnBeingHitByZombie
+    Add = function(callback) end,
+    ---@param callback Callback_OnBeingHitByZombie
+    Remove = function(callback) end,
 }
+
 ---@deprecated
+---@alias Callback_OnChangeWeather function
+
 ---(Deprecated) 
 Events.OnChangeWeather = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnChangeWeather
+    Add = function(callback) end,
+    ---@param callback Callback_OnChangeWeather
+    Remove = function(callback) end,
 }
+
 ---@deprecated
+---@alias Callback_OnCharacterCreateStats function
+
 ---(Deprecated) 
 Events.OnCharacterCreateStats = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnCharacterCreateStats
+    Add = function(callback) end,
+    ---@param callback Callback_OnCharacterCreateStats
+    Remove = function(callback) end,
 }
+
 ---@deprecated
+---@alias Callback_OnCharacterMeet function
+
 ---(Deprecated) 
 Events.OnCharacterMeet = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnCharacterMeet
+    Add = function(callback) end,
+    ---@param callback Callback_OnCharacterMeet
+    Remove = function(callback) end,
 }
+
 ---@deprecated
+---@alias Callback_OnDawn function
+
 ---(Deprecated) 
 Events.OnDawn = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnDawn
+    Add = function(callback) end,
+    ---@param callback Callback_OnDawn
+    Remove = function(callback) end,
 }
+
 ---@deprecated
+---@alias Callback_OnDoTileBuilding function
+
 ---(Deprecated) 
 Events.OnDoTileBuilding = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnDoTileBuilding
+    Add = function(callback) end,
+    ---@param callback Callback_OnDoTileBuilding
+    Remove = function(callback) end,
 }
+
 ---@deprecated
+---@alias Callback_OnDusk function
+
 ---(Deprecated) 
 Events.OnDusk = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnDusk
+    Add = function(callback) end,
+    ---@param callback Callback_OnDusk
+    Remove = function(callback) end,
 }
+
 ---@deprecated
+---@alias Callback_OnIsoThumpableLoad function
+
 ---(Deprecated) 
 Events.OnIsoThumpableLoad = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnIsoThumpableLoad
+    Add = function(callback) end,
+    ---@param callback Callback_OnIsoThumpableLoad
+    Remove = function(callback) end,
 }
+
 ---@deprecated
+---@alias Callback_OnIsoThumpableSave function
+
 ---(Deprecated) 
 Events.OnIsoThumpableSave = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnIsoThumpableSave
+    Add = function(callback) end,
+    ---@param callback Callback_OnIsoThumpableSave
+    Remove = function(callback) end,
 }
+
 ---@deprecated
+---@alias Callback_OnLoginState function
+
 ---(Deprecated) 
 Events.OnLoginState = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnLoginState
+    Add = function(callback) end,
+    ---@param callback Callback_OnLoginState
+    Remove = function(callback) end,
 }
+
 ---@deprecated
+---@alias Callback_OnLoginStateSuccess function
+
 ---(Deprecated) 
 Events.OnLoginStateSuccess = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnLoginStateSuccess
+    Add = function(callback) end,
+    ---@param callback Callback_OnLoginStateSuccess
+    Remove = function(callback) end,
 }
+
 ---@deprecated
+---@alias Callback_OnMakeItem function
+
 ---(Deprecated) 
 Events.OnMakeItem = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnMakeItem
+    Add = function(callback) end,
+    ---@param callback Callback_OnMakeItem
+    Remove = function(callback) end,
 }
+
 ---@deprecated
+---@alias Callback_OnMapLoadCreateIsoObject function
+
 ---(Deprecated) 
 Events.OnMapLoadCreateIsoObject = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnMapLoadCreateIsoObject
+    Add = function(callback) end,
+    ---@param callback Callback_OnMapLoadCreateIsoObject
+    Remove = function(callback) end,
 }
+
 ---@deprecated
+---@alias Callback_OnNewSurvivorGroup function
+
 ---(Deprecated) 
 Events.OnNewSurvivorGroup = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnNewSurvivorGroup
+    Add = function(callback) end,
+    ---@param callback Callback_OnNewSurvivorGroup
+    Remove = function(callback) end,
 }
+
 ---@deprecated
+---@alias Callback_OnNPCSurvivorUpdate function
+
 ---(Deprecated) 
 Events.OnNPCSurvivorUpdate = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnNPCSurvivorUpdate
+    Add = function(callback) end,
+    ---@param callback Callback_OnNPCSurvivorUpdate
+    Remove = function(callback) end,
 }
+
 ---@deprecated
+---@alias Callback_OnPlayerSetSafehouse function
+
 ---(Deprecated) 
 Events.OnPlayerSetSafehouse = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnPlayerSetSafehouse
+    Add = function(callback) end,
+    ---@param callback Callback_OnPlayerSetSafehouse
+    Remove = function(callback) end,
 }
+
 ---@deprecated
+---@alias Callback_OnPostCharactersSquareDraw function
+
 ---(Deprecated) 
 Events.OnPostCharactersSquareDraw = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnPostCharactersSquareDraw
+    Add = function(callback) end,
+    ---@param callback Callback_OnPostCharactersSquareDraw
+    Remove = function(callback) end,
 }
+
 ---@deprecated
+---@alias Callback_OnPostFloorSquareDraw function
+
 ---(Deprecated) 
 Events.OnPostFloorSquareDraw = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnPostFloorSquareDraw
+    Add = function(callback) end,
+    ---@param callback Callback_OnPostFloorSquareDraw
+    Remove = function(callback) end,
 }
+
 ---@deprecated
+---@alias Callback_OnPostTileDraw function
+
 ---(Deprecated) 
 Events.OnPostTileDraw = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnPostTileDraw
+    Add = function(callback) end,
+    ---@param callback Callback_OnPostTileDraw
+    Remove = function(callback) end,
 }
+
 ---@deprecated
+---@alias Callback_OnPostTilesSquareDraw function
+
 ---(Deprecated) 
 Events.OnPostTilesSquareDraw = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnPostTilesSquareDraw
+    Add = function(callback) end,
+    ---@param callback Callback_OnPostTilesSquareDraw
+    Remove = function(callback) end,
 }
+
 ---@deprecated
+---@alias Callback_OnPostWallSquareDraw function
+
 ---(Deprecated) 
 Events.OnPostWallSquareDraw = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnPostWallSquareDraw
+    Add = function(callback) end,
+    ---@param callback Callback_OnPostWallSquareDraw
+    Remove = function(callback) end,
 }
+
 ---@deprecated
+---@alias Callback_OnPreGameStart function
+
 ---(Deprecated) 
 Events.OnPreGameStart = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnPreGameStart
+    Add = function(callback) end,
+    ---@param callback Callback_OnPreGameStart
+    Remove = function(callback) end,
 }
+
 ---@deprecated
+---@alias Callback_OnRadioInteraction function
+
 ---(Deprecated) 
 Events.OnRadioInteraction = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnRadioInteraction
+    Add = function(callback) end,
+    ---@param callback Callback_OnRadioInteraction
+    Remove = function(callback) end,
 }
+
 ---@deprecated
+---@alias Callback_OnRainStart function
+
 ---(Deprecated) 
 Events.OnRainStart = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnRainStart
+    Add = function(callback) end,
+    ---@param callback Callback_OnRainStart
+    Remove = function(callback) end,
 }
+
 ---@deprecated
+---@alias Callback_OnRainStop function
+
 ---(Deprecated) 
 Events.OnRainStop = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnRainStop
+    Add = function(callback) end,
+    ---@param callback Callback_OnRainStop
+    Remove = function(callback) end,
 }
+
 ---@deprecated
+---@alias Callback_OnRenderUpdate function
+
 ---(Deprecated) 
 Events.OnRenderUpdate = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnRenderUpdate
+    Add = function(callback) end,
+    ---@param callback Callback_OnRenderUpdate
+    Remove = function(callback) end,
 }
+
 ---@deprecated
+---@alias Callback_OnVehicleHorn function
+
 ---(Deprecated) 
 Events.OnVehicleHorn = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnVehicleHorn
+    Add = function(callback) end,
+    ---@param callback Callback_OnVehicleHorn
+    Remove = function(callback) end,
 }
+
 ---@deprecated
+---@alias Callback_OnWorldMessage function
+
 ---(Deprecated) 
 Events.OnWorldMessage = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_OnWorldMessage
+    Add = function(callback) end,
+    ---@param callback Callback_OnWorldMessage
+    Remove = function(callback) end,
 }
+
 Hook = {}
+
 ---@deprecated
+---@alias Callback_UseItem function
+
 ---(Deprecated) 
 Hook.UseItem = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_UseItem
+    Add = function(callback) end,
+    ---@param callback Callback_UseItem
+    Remove = function(callback) end,
 }
+
 ---@deprecated
+---@alias Callback_WeaponSwingHitPoint function
+
 ---(Deprecated) 
 Hook.WeaponSwingHitPoint = {
-    ---@param func function
-    Add = function(func) end,
-    ---@param func function
-    Remove = function(func) end,
+    ---@param callback Callback_WeaponSwingHitPoint
+    Add = function(callback) end,
+    ---@param callback Callback_WeaponSwingHitPoint
+    Remove = function(callback) end,
 }
+
